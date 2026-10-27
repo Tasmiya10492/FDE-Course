@@ -18,8 +18,8 @@ jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@<ACTIONS_CHECKOUT_SHA>      # release tag of this commit
-      - uses: astral-sh/setup-uv@<ACTIONS_SETUP_UV_SHA>    # release tag of this commit
+      - uses: uses: actions/checkout@v4      # release tag of this commit
+      - uses: uses: astral-sh/setup-uv@v5    # release tag of this commit
       - run: uv sync --locked            # install exactly what uv.lock says
       - run: uv run ruff format --check  # formatting
       - run: uv run ruff check           # lint
