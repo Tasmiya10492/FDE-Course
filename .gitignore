@@ -1,24 +1,12 @@
-# .gitignore: files Git must never record (Playbook VC-07). Secrets first.
-.env
-app.env
-*.pem
-*.key
-
-# Python
-.venv/
+# Python cache files
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Test cache
 .pytest_cache/
-.ruff_cache/
-.coverage
-htmlcov/
 
-# Editors and system
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
+# Virtual environments
+.venv/
 
-# Local data
-uploads/
-*.sqlite3
+# Environment variables and secrets
+.env
