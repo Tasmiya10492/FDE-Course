@@ -1,0 +1,7 @@
+experiment,temperature,seed,run,status,duration_seconds,error
+temperature_0,0.0,42,1,SUCCESS,25.59,
+temperature_0,0.0,42,2,SUCCESS,13.24,
+temperature_0,0.0,42,3,SUCCESS,13.73,
+temperature_0_8,0.8,42,1,SUCCESS,14.08,
+temperature_0_8,0.8,42,2,SUCCESS,29.67,
+temperature_0_8,0.8,42,3,SUCCESS,20.99,

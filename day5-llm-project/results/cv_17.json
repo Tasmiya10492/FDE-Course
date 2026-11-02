@@ -1,0 +1,38 @@
+{
+  "full_name": "Quin Quill",
+  "email": "quin.quill@example.com",
+  "phone": "+00 555 966 4099",
+  "location": "Kochi",
+  "summary": "Analyst with 8 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "JavaScript",
+    "AWS basics",
+    "Linux",
+    "Excel",
+    "Testing"
+  ],
+  "experience": [
+    {
+      "job_title": "Support Engineer",
+      "company": "Pinewood Digital",
+      "start_year": 2023,
+      "end_year": 2025
+    },
+    {
+      "job_title": "Software Engineer",
+      "company": "Copperleaf Services",
+      "start_year": 2019,
+      "end_year": 2023
+    },
+    {
+      "job_title": "Software Engineer",
+      "company": "Quillfeather Data",
+      "start_year": 2017,
+      "end_year": 2019
+    }
+  ],
+  "education": {
+    "degree": "B.Sc Mathematics",
+    "graduation_year": 2017
+  }
+}

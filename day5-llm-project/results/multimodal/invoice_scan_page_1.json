@@ -1,0 +1,29 @@
+{
+    "invoice_number": "INV-2026-0533",
+    "invoice_date": "2026-03-14",
+    "due_date": "2026-04-13",
+    "vendor_name": "Harbourlight Stationers (invented)",
+    "vendor_address": "12 Example Street, Sampletown (invented address)",
+    "customer_name": "Demo Customer Co (invented)",
+    "items": [
+        {
+            "description": "A4 paper boxes",
+            "quantity": "20",
+            "unit_price": "520",
+            "amount": "10400"
+        },
+        {
+            "description": "Toner cartridges",
+            "quantity": "3",
+            "unit_price": "4100",
+            "amount": "12300"
+        }
+    ],
+    "currency": null,
+    "subtotal": "22700",
+    "tax_rate": "18",
+    "tax_amount": "4086",
+    "total_due": "26786",
+    "payment_method": "bank transfer",
+    "payment_reference": "invoice no."
+}

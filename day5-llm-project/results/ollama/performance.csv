@@ -1,0 +1,11 @@
+cv_file,provider,model,status,duration_seconds,error
+cv_01.txt,ollama,qwen3.5:2b,SUCCESS,25.31,
+cv_02.txt,ollama,qwen3.5:2b,SUCCESS,17.76,
+cv_03.txt,ollama,qwen3.5:2b,SUCCESS,22.94,
+cv_04.txt,ollama,qwen3.5:2b,SUCCESS,27.21,
+cv_05.txt,ollama,qwen3.5:2b,SUCCESS,32.52,
+cv_06.txt,ollama,qwen3.5:2b,SUCCESS,27.86,
+cv_07.txt,ollama,qwen3.5:2b,SUCCESS,25.49,
+cv_08.txt,ollama,qwen3.5:2b,SUCCESS,27.52,
+cv_09.txt,ollama,qwen3.5:2b,SUCCESS,37.4,
+cv_10.txt,ollama,qwen3.5:2b,SUCCESS,33.39,

@@ -1,0 +1,33 @@
+{
+  "full_name": "Rhea Reed",
+  "email": "rhea.reed@example.com",
+  "phone": "+00 555 435 2352",
+  "location": "Chennai",
+  "summary": "Engineer with 2 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "Linux",
+    "Power BI",
+    "Java",
+    "JavaScript",
+    "Python",
+    "PostgreSQL"
+  ],
+  "experience": [
+    {
+      "job_title": "Business Analyst",
+      "company": "Alderbrook Systems",
+      "start_year": 2024,
+      "end_year": 2025
+    },
+    {
+      "job_title": "Data Analyst",
+      "company": "Larkfield Labs",
+      "start_year": 2023,
+      "end_year": 2024
+    }
+  ],
+  "education": {
+    "degree": "BCA",
+    "graduation_year": 2023
+  }
+}

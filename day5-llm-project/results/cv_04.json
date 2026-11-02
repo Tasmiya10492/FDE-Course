@@ -1,0 +1,34 @@
+{
+  "full_name": "Dara Dunn",
+  "email": "dara.dunn@example.com",
+  "phone": "+00 555 658 9225",
+  "location": "Chennai",
+  "summary": "Engineer with 7 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "JavaScript",
+    "Excel",
+    "Testing",
+    "Jira",
+    "PostgreSQL",
+    "Power BI",
+    "AWS basics"
+  ],
+  "experience": [
+    {
+      "job_title": "QA Engineer",
+      "company": "Copperleaf Services",
+      "start_year": 2022,
+      "end_year": 2025
+    },
+    {
+      "job_title": "Business Analyst",
+      "company": "Copperleaf Services",
+      "start_year": 2018,
+      "end_year": 2022
+    }
+  ],
+  "education": {
+    "degree": "M.Sc Statistics",
+    "graduation_year": 2018
+  }
+}
