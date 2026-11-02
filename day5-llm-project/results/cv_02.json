@@ -1,0 +1,25 @@
+{
+  "full_name": "Bram Brook",
+  "email": "bram.brook@example.com",
+  "phone": "+00 555 274 1814",
+  "location": "Mumbai",
+  "summary": "Engineer with 3 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "SQL",
+    "AWS basics",
+    "JavaScript",
+    "Power BI"
+  ],
+  "experience": [
+    {
+      "job_title": "QA Engineer",
+      "company": "Pinewood Digital",
+      "start_year": 2022,
+      "end_year": 2025
+    }
+  ],
+  "education": {
+    "degree": "MCA",
+    "graduation_year": 2020
+  }
+}

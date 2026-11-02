@@ -1,0 +1,38 @@
+{
+  "full_name": "Jun Joyce",
+  "email": "jun.joyce@example.com",
+  "phone": "+00 555 578 2521",
+  "location": "Bengaluru",
+  "summary": "Engineer with 11 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "FastAPI",
+    "Testing",
+    "Linux",
+    "Docker",
+    "Jira"
+  ],
+  "experience": [
+    {
+      "job_title": "Support Engineer",
+      "company": "Alderbrook Systems",
+      "start_year": 2021,
+      "end_year": 2025
+    },
+    {
+      "job_title": "QA Engineer",
+      "company": "Harbourlight Tech",
+      "start_year": 2017,
+      "end_year": 2021
+    },
+    {
+      "job_title": "Backend Developer",
+      "company": "Pinewood Digital",
+      "start_year": 2014,
+      "end_year": 2017
+    }
+  ],
+  "education": {
+    "degree": "MCA",
+    "graduation_year": 2013
+  }
+}

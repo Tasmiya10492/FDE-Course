@@ -1,0 +1,81 @@
+cv_file,field,expected_value,extracted_value,correct
+cv_01.txt,full_name,Asha Alder,Asha Alder,TRUE
+cv_01.txt,email,asha.alder@example.com,asha.alder@example.com,TRUE
+cv_01.txt,phone,+00 555 588 8287,+00 555 588 8287,TRUE
+cv_01.txt,location,Kochi,Kochi,TRUE
+cv_01.txt,summary,Analyst with 1 years of experience. Likes clear tests and short pull requests.,Analyst with 1 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_01.txt,skills,"[""JavaScript"", ""SQL"", ""Git"", ""AWS basics"", ""Java"", ""Power BI"", ""Linux""]","[""JavaScript"", ""SQL"", ""Git"", ""AWS basics"", ""Java"", ""Power BI"", ""Linux""]",TRUE
+cv_01.txt,experience,"[{""job_title"": ""Backend Developer"", ""company"": ""Stonebridge Software"", ""start_year"": 2024, ""end_year"": 2025}]","[{""job_title"": ""Backend Developer"", ""company"": ""Stonebridge Software"", ""start_year"": 2024, ""end_year"": 2025}]",TRUE
+cv_01.txt,education,"{""degree"": ""B.Sc Mathematics"", ""graduation_year"": 2022}","{""degree"": ""B.Sc Mathematics"", ""graduation_year"": 2022}",TRUE
+cv_02.txt,full_name,Bram Brook,Bram Brook,TRUE
+cv_02.txt,email,bram.brook@example.com,bram.brook@example.com,TRUE
+cv_02.txt,phone,+00 555 274 1814,+00 555 274 1814,TRUE
+cv_02.txt,location,Mumbai,Mumbai,TRUE
+cv_02.txt,summary,Engineer with 3 years of experience. Likes clear tests and short pull requests.,Engineer with 3 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_02.txt,skills,"[""SQL"", ""AWS basics"", ""JavaScript"", ""Power BI""]","[""SQL"", ""AWS basics"", ""JavaScript"", ""Power BI""]",TRUE
+cv_02.txt,experience,"[{""job_title"": ""QA Engineer"", ""company"": ""Pinewood Digital"", ""start_year"": 2022, ""end_year"": 2025}]","[{""job_title"": ""QA Engineer"", ""company"": ""Pinewood Digital"", ""start_year"": 2022, ""end_year"": 2025}]",TRUE
+cv_02.txt,education,"{""degree"": ""MCA"", ""graduation_year"": 2020}","{""degree"": ""MCA"", ""graduation_year"": 2020}",TRUE
+cv_03.txt,full_name,Chen Cole,Chen Cole,TRUE
+cv_03.txt,email,chen.cole@example.com,chen.cole@example.com,TRUE
+cv_03.txt,phone,+00 555 148 2290,+00 555 148 2290,TRUE
+cv_03.txt,location,Bengaluru,Bengaluru,TRUE
+cv_03.txt,summary,Analyst with 5 years of experience. Likes clear tests and short pull requests.,Analyst with 5 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_03.txt,skills,"[""Python"", ""JavaScript"", ""AWS basics"", ""PostgreSQL""]","[""Python"", ""JavaScript"", ""AWS basics"", ""PostgreSQL""]",TRUE
+cv_03.txt,experience,"[{""job_title"": ""Data Analyst"", ""company"": ""Stonebridge Software"", ""start_year"": 2024, ""end_year"": 2025}, {""job_title"": ""Backend Developer"", ""company"": ""Quillfeather Data"", ""start_year"": 2020, ""end_year"": 2024}]","[{""job_title"": ""Data Analyst"", ""company"": ""Stonebridge Software"", ""start_year"": 2024, ""end_year"": 2025}, {""job_title"": ""Backend Developer"", ""company"": ""Quillfeather Data"", ""start_year"": 2020, ""end_year"": 2024}]",TRUE
+cv_03.txt,education,"{""degree"": ""B.Sc Mathematics"", ""graduation_year"": 2018}","{""degree"": ""B.Sc Mathematics"", ""graduation_year"": 2018}",TRUE
+cv_04.txt,full_name,Dara Dunn,Dara Dunn,TRUE
+cv_04.txt,email,dara.dunn@example.com,dara.dunn@example.com,TRUE
+cv_04.txt,phone,+00 555 658 9225,+00 555 658 9225,TRUE
+cv_04.txt,location,Chennai,Chennai,TRUE
+cv_04.txt,summary,Engineer with 7 years of experience. Likes clear tests and short pull requests.,Engineer with 7 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_04.txt,skills,"[""JavaScript"", ""Excel"", ""Testing"", ""Jira"", ""PostgreSQL"", ""Power BI"", ""AWS basics""]","[""JavaScript"", ""Excel"", ""Testing"", ""Jira"", ""PostgreSQL"", ""Power BI"", ""AWS basics""]",TRUE
+cv_04.txt,experience,"[{""job_title"": ""QA Engineer"", ""company"": ""Copperleaf Services"", ""start_year"": 2022, ""end_year"": 2025}, {""job_title"": ""Business Analyst"", ""company"": ""Copperleaf Services"", ""start_year"": 2018, ""end_year"": 2022}]","[{""job_title"": ""QA Engineer"", ""company"": ""Copperleaf Services"", ""start_year"": 2022, ""end_year"": 2025}, {""job_title"": ""Business Analyst"", ""company"": ""Copperleaf Services"", ""start_year"": 2018, ""end_year"": 2022}]",TRUE
+cv_04.txt,education,"{""degree"": ""M.Sc Statistics"", ""graduation_year"": 2018}","{""degree"": ""M.Sc Statistics"", ""graduation_year"": 2018}",TRUE
+cv_05.txt,full_name,Elio Ellis,Elio Ellis,TRUE
+cv_05.txt,email,elio.ellis@example.com,elio.ellis@example.com,TRUE
+cv_05.txt,phone,+00 555 570 7880,+00 555 570 7880,TRUE
+cv_05.txt,location,Chennai,Chennai,TRUE
+cv_05.txt,summary,Engineer with 7 years of experience. Likes clear tests and short pull requests.,Engineer with 7 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_05.txt,skills,"[""FastAPI"", ""Jira"", ""SQL"", ""Excel"", ""Linux"", ""Testing""]","[""FastAPI"", ""Jira"", ""SQL"", ""Excel"", ""Linux"", ""Testing""]",TRUE
+cv_05.txt,experience,"[{""job_title"": ""Business Analyst"", ""company"": ""Alderbrook Systems"", ""start_year"": 2023, ""end_year"": 2025}, {""job_title"": ""Support Engineer"", ""company"": ""Stonebridge Software"", ""start_year"": 2021, ""end_year"": 2023}, {""job_title"": ""Software Engineer"", ""company"": ""Marlowe Finch Analytics"", ""start_year"": 2018, ""end_year"": 2021}]","[{""job_title"": ""Business Analyst"", ""company"": ""Alderbrook Systems"", ""start_year"": 2023, ""end_year"": 2025}, {""job_title"": ""Support Engineer"", ""company"": ""Stonebridge Software"", ""start_year"": 2021, ""end_year"": 2023}, {""job_title"": ""Software Engineer"", ""company"": ""Marlowe Finch Analytics"", ""start_year"": 2018, ""end_year"": 2021}]",TRUE
+cv_05.txt,education,"{""degree"": ""B.Sc Mathematics"", ""graduation_year"": 2017}","{""degree"": ""B.Sc Mathematics"", ""graduation_year"": 2017}",TRUE
+cv_06.txt,full_name,Farah Frost,Farah Frost,TRUE
+cv_06.txt,email,farah.frost@example.com,farah.frost@example.com,TRUE
+cv_06.txt,phone,+00 555 369 8379,+00 555 369 8379,TRUE
+cv_06.txt,location,Kochi,Kochi,TRUE
+cv_06.txt,summary,Engineer with 5 years of experience. Likes clear tests and short pull requests.,Engineer with 5 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_06.txt,skills,"[""FastAPI"", ""Python"", ""Linux"", ""Jira"", ""Testing"", ""PostgreSQL""]","[""FastAPI"", ""Python"", ""Linux"", ""Jira"", ""Testing"", ""PostgreSQL""]",TRUE
+cv_06.txt,experience,"[{""job_title"": ""DevOps Engineer"", ""company"": ""Harbourlight Tech"", ""start_year"": 2022, ""end_year"": 2025}, {""job_title"": ""Backend Developer"", ""company"": ""Harbourlight Tech"", ""start_year"": 2020, ""end_year"": 2022}]","[{""job_title"": ""DevOps Engineer"", ""company"": ""Harbourlight Tech"", ""start_year"": 2022, ""end_year"": 2025}, {""job_title"": ""Backend Developer"", ""company"": ""Harbourlight Tech"", ""start_year"": 2020, ""end_year"": 2022}]",TRUE
+cv_06.txt,education,"{""degree"": ""BCA"", ""graduation_year"": 2018}","{""degree"": ""BCA"", ""graduation_year"": 2018}",TRUE
+cv_07.txt,full_name,Goran Grove,Goran Grove,TRUE
+cv_07.txt,email,goran.grove@example.com,goran.grove@example.com,TRUE
+cv_07.txt,phone,+00 555 286 2483,+00 555 286 2483,TRUE
+cv_07.txt,location,Bengaluru,Bengaluru,TRUE
+cv_07.txt,summary,Analyst with 1 years of experience. Likes clear tests and short pull requests.,Analyst with 1 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_07.txt,skills,"[""Testing"", ""Git"", ""SQL"", ""AWS basics"", ""Linux""]","[""Testing"", ""Git"", ""SQL"", ""AWS basics"", ""Linux""]",TRUE
+cv_07.txt,experience,"[{""job_title"": ""Software Engineer"", ""company"": ""Larkfield Labs"", ""start_year"": 2024, ""end_year"": 2025}]","[{""job_title"": ""Software Engineer"", ""company"": ""Larkfield Labs"", ""start_year"": 2024, ""end_year"": 2025}]",TRUE
+cv_07.txt,education,"{""degree"": ""M.Sc Statistics"", ""graduation_year"": 2024}","{""degree"": ""M.Sc Statistics"", ""graduation_year"": 2024}",TRUE
+cv_08.txt,full_name,Hana Hale,Hana Hale,TRUE
+cv_08.txt,email,hana.hale@example.com,hana.hale@example.com,TRUE
+cv_08.txt,phone,+00 555 281 5107,+00 555 281 5107,TRUE
+cv_08.txt,location,Pune,Pune,TRUE
+cv_08.txt,summary,Engineer with 6 years of experience. Likes clear tests and short pull requests.,Engineer with 6 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_08.txt,skills,"[""Testing"", ""Git"", ""SQL"", ""FastAPI"", ""Excel"", ""Linux""]","[""Testing"", ""Git"", ""SQL"", ""FastAPI"", ""Excel"", ""Linux""]",TRUE
+cv_08.txt,experience,"[{""job_title"": ""Support Engineer"", ""company"": ""Alderbrook Systems"", ""start_year"": 2023, ""end_year"": 2025}, {""job_title"": ""Software Engineer"", ""company"": ""Harbourlight Tech"", ""start_year"": 2019, ""end_year"": 2023}]","[{""job_title"": ""Support Engineer"", ""company"": ""Alderbrook Systems"", ""start_year"": 2023, ""end_year"": 2025}, {""job_title"": ""Software Engineer"", ""company"": ""Harbourlight Tech"", ""start_year"": 2019, ""end_year"": 2023}]",TRUE
+cv_08.txt,education,"{""degree"": ""B.Sc Mathematics"", ""graduation_year"": 2018}","{""degree"": ""B.Sc Mathematics"", ""graduation_year"": 2018}",TRUE
+cv_09.txt,full_name,Ivo Ivey,Ivo Ivey,TRUE
+cv_09.txt,email,ivo.ivey@example.com,ivo.ivey@example.com,TRUE
+cv_09.txt,phone,+00 555 264 6765,+00 555 264 6765,TRUE
+cv_09.txt,location,Pune,Pune,TRUE
+cv_09.txt,summary,Engineer with 10 years of experience. Likes clear tests and short pull requests.,Engineer with 10 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_09.txt,skills,"[""AWS basics"", ""Testing"", ""PostgreSQL"", ""Python"", ""SQL"", ""Git"", ""Java""]","[""AWS basics"", ""Testing"", ""PostgreSQL"", ""Python"", ""SQL"", ""Git"", ""Java""]",TRUE
+cv_09.txt,experience,"[{""job_title"": ""Support Engineer"", ""company"": ""Alderbrook Systems"", ""start_year"": 2021, ""end_year"": 2025}, {""job_title"": ""DevOps Engineer"", ""company"": ""Quillfeather Data"", ""start_year"": 2018, ""end_year"": 2021}, {""job_title"": ""Business Analyst"", ""company"": ""Larkfield Labs"", ""start_year"": 2015, ""end_year"": 2018}]","[{""job_title"": ""Support Engineer"", ""company"": ""Alderbrook Systems"", ""start_year"": 2021, ""end_year"": 2025}, {""job_title"": ""DevOps Engineer"", ""company"": ""Quillfeather Data"", ""start_year"": 2018, ""end_year"": 2021}, {""job_title"": ""Business Analyst"", ""company"": ""Larkfield Labs"", ""start_year"": 2015, ""end_year"": 2018}]",TRUE
+cv_09.txt,education,"{""degree"": ""B.Tech Computer Science"", ""graduation_year"": 2014}","{""degree"": ""B.Tech Computer Science"", ""graduation_year"": 2014}",TRUE
+cv_10.txt,full_name,Jun Joyce,Jun Joyce,TRUE
+cv_10.txt,email,jun.joyce@example.com,jun.joyce@example.com,TRUE
+cv_10.txt,phone,+00 555 578 2521,+00 555 578 2521,TRUE
+cv_10.txt,location,Bengaluru,Bengaluru,TRUE
+cv_10.txt,summary,Engineer with 11 years of experience. Likes clear tests and short pull requests.,Engineer with 11 years of experience. Likes clear tests and short pull requests.,TRUE
+cv_10.txt,skills,"[""FastAPI"", ""Testing"", ""Linux"", ""Docker"", ""Jira""]","[""FastAPI"", ""Testing"", ""Linux"", ""Docker"", ""Jira""]",TRUE
+cv_10.txt,experience,"[{""job_title"": ""Support Engineer"", ""company"": ""Alderbrook Systems"", ""start_year"": 2021, ""end_year"": 2025}, {""job_title"": ""QA Engineer"", ""company"": ""Harbourlight Tech"", ""start_year"": 2017, ""end_year"": 2021}, {""job_title"": ""Backend Developer"", ""company"": ""Pinewood Digital"", ""start_year"": 2014, ""end_year"": 2017}]","[{""job_title"": ""Support Engineer"", ""company"": ""Alderbrook Systems"", ""start_year"": 2021, ""end_year"": 2025}, {""job_title"": ""QA Engineer"", ""company"": ""Harbourlight Tech"", ""start_year"": 2017, ""end_year"": 2021}, {""job_title"": ""Backend Developer"", ""company"": ""Pinewood Digital"", ""start_year"": 2014, ""end_year"": 2017}]",TRUE
+cv_10.txt,education,"{""degree"": ""MCA"", ""graduation_year"": 2013}","{""degree"": ""MCA"", ""graduation_year"": 2013}",TRUE

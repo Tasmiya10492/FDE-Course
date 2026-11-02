@@ -1,0 +1,33 @@
+{
+  "full_name": "Lars Lowe",
+  "email": "lars.lowe@example.com",
+  "phone": "+00 555 154 8198",
+  "location": "Delhi",
+  "summary": "Analyst with 4 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "JavaScript",
+    "PostgreSQL",
+    "Docker",
+    "Java",
+    "FastAPI",
+    "Testing"
+  ],
+  "experience": [
+    {
+      "job_title": "Backend Developer",
+      "company": "Pinewood Digital",
+      "start_year": 2024,
+      "end_year": 2025
+    },
+    {
+      "job_title": "DevOps Engineer",
+      "company": "Larkfield Labs",
+      "start_year": 2021,
+      "end_year": 2024
+    }
+  ],
+  "education": {
+    "degree": "B.Sc Mathematics",
+    "graduation_year": 2019
+  }
+}

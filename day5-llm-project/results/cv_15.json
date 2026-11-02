@@ -1,0 +1,37 @@
+{
+  "full_name": "Oren Orr",
+  "email": "oren.orr@example.com",
+  "phone": "+00 555 533 2987",
+  "location": "Chennai",
+  "summary": "Analyst with 9 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "Docker",
+    "Python",
+    "Excel",
+    "Java"
+  ],
+  "experience": [
+    {
+      "job_title": "Support Engineer",
+      "company": "Copperleaf Services",
+      "start_year": 2021,
+      "end_year": 2025
+    },
+    {
+      "job_title": "Backend Developer",
+      "company": "Marlowe Finch Analytics",
+      "start_year": 2019,
+      "end_year": 2021
+    },
+    {
+      "job_title": "DevOps Engineer",
+      "company": "Quillfeather Data",
+      "start_year": 2016,
+      "end_year": 2019
+    }
+  ],
+  "education": {
+    "degree": "B.E. Electronics",
+    "graduation_year": 2016
+  }
+}

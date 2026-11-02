@@ -1,0 +1,11 @@
+cv_file,provider,model,status,duration_seconds,error
+cv_01.txt,groq,openai/gpt-oss-20b,SUCCESS,0.98,
+cv_02.txt,groq,openai/gpt-oss-20b,SUCCESS,1.08,
+cv_03.txt,groq,openai/gpt-oss-20b,SUCCESS,1.22,
+cv_04.txt,groq,openai/gpt-oss-20b,SUCCESS,1.09,
+cv_05.txt,groq,openai/gpt-oss-20b,SUCCESS,1.41,
+cv_06.txt,groq,openai/gpt-oss-20b,SUCCESS,1.17,
+cv_07.txt,groq,openai/gpt-oss-20b,SUCCESS,0.93,
+cv_08.txt,groq,openai/gpt-oss-20b,SUCCESS,1.06,
+cv_09.txt,groq,openai/gpt-oss-20b,SUCCESS,1.49,
+cv_10.txt,groq,openai/gpt-oss-20b,SUCCESS,0.89,

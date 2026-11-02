@@ -1,0 +1,26 @@
+{
+  "full_name": "Noor Nash",
+  "email": "noor.nash@example.com",
+  "phone": "+00 555 809 2311",
+  "location": "Kochi",
+  "summary": "Engineer with 2 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "Jira",
+    "Python",
+    "Git",
+    "Java",
+    "Power BI"
+  ],
+  "experience": [
+    {
+      "job_title": "DevOps Engineer",
+      "company": "Larkfield Labs",
+      "start_year": 2023,
+      "end_year": 2025
+    }
+  ],
+  "education": {
+    "degree": "B.E. Electronics",
+    "graduation_year": 2022
+  }
+}

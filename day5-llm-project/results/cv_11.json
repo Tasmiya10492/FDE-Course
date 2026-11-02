@@ -1,0 +1,27 @@
+{
+  "full_name": "Kaya Kent",
+  "email": "kaya.kent@example.com",
+  "phone": "+00 555 183 7237",
+  "location": "Mumbai",
+  "summary": "Engineer with 1 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "Linux",
+    "SQL",
+    "AWS basics",
+    "Jira",
+    "JavaScript",
+    "Git"
+  ],
+  "experience": [
+    {
+      "job_title": "Backend Developer",
+      "company": "Stonebridge Software",
+      "start_year": 2024,
+      "end_year": 2025
+    }
+  ],
+  "education": {
+    "degree": "M.Sc Statistics",
+    "graduation_year": 2022
+  }
+}

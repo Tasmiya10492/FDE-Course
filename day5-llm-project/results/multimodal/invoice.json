@@ -1,0 +1,35 @@
+{
+    "invoice_number": "INV-2026-0417",
+    "invoice_date": "2026-03-14",
+    "due_date": "2026-04-13",
+    "vendor_name": "Brightwater Supplies Ltd (invented)",
+    "vendor_address": "12 Example Street, Sampletown (invented address)",
+    "customer_name": "Demo Customer Co (invented)",
+    "items": [
+        {
+            "description": "Office chairs",
+            "quantity": "4",
+            "unit_price": "3200",
+            "amount": "12800"
+        },
+        {
+            "description": "Desk lamps",
+            "quantity": "10",
+            "unit_price": "450",
+            "amount": "4500"
+        },
+        {
+            "description": "Delivery",
+            "quantity": "1",
+            "unit_price": "600",
+            "amount": "600"
+        }
+    ],
+    "currency": null,
+    "subtotal": "17900",
+    "tax_rate": "18",
+    "tax_amount": "3222",
+    "total_due": "21122",
+    "payment_method": "bank transfer",
+    "payment_reference": "invoice no."
+}

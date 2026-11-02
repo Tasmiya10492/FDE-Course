@@ -1,0 +1,25 @@
+{
+  "full_name": "Mira Marsh",
+  "email": "mira.marsh@example.com",
+  "phone": "+00 555 668 8324",
+  "location": "Kochi",
+  "summary": "Engineer with 2 years of experience. Likes clear tests and short pull requests.",
+  "skills": [
+    "Docker",
+    "SQL",
+    "Excel",
+    "Python"
+  ],
+  "experience": [
+    {
+      "job_title": "DevOps Engineer",
+      "company": "Larkfield Labs",
+      "start_year": 2023,
+      "end_year": 2025
+    }
+  ],
+  "education": {
+    "degree": "B.Tech Computer Science",
+    "graduation_year": 2021
+  }
+}
