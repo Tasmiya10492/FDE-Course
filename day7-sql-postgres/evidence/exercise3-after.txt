@@ -1,0 +1,10 @@
+                                  QUERY PLAN
+-------------------------------------------------------------------------------
+ Sort  (cost=7.11..7.32 rows=84 width=29)
+   Sort Key: lr.id
+   ->  Hash Join  (cost=2.35..4.42 rows=84 width=29)
+         Hash Cond: (lr.parent_id = e.id)
+         ->  Seq Scan on leave_requests lr  (cost=0.00..1.84 rows=84 width=23)
+         ->  Hash  (cost=1.60..1.60 rows=60 width=14)
+               ->  Seq Scan on employees e  (cost=0.00..1.60 rows=60 width=14)
+(7 rows)
