@@ -1,0 +1,13 @@
+Document ID: HR013
+
+Title: Leave Carry Forward
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Annual leave carry forward is subject to the company's leave policy and applicable employment terms.
+
+The maximum number of days that can be carried forward may vary according to employee eligibility and company rules.
+
+Employees should review their leave balance before the end of the leave year.
+
+HR can confirm the applicable carry-forward limit and expiry date.

@@ -1,0 +1,2 @@
+NAME               IMAGE                    COMMAND                  SERVICE    CREATED         STATUS                   PORTS
+day8-pgvector-db   pgvector/pgvector:pg17   "docker-entrypoint.s…"   postgres   2 minutes ago   Up 2 minutes (healthy)   0.0.0.0:5433->5432/tcp, [::]:5433->5432/tcp

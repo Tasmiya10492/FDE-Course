@@ -1,0 +1,13 @@
+Document ID: HR009
+
+Title: Maternity Leave
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Eligible employees may apply for maternity leave according to applicable law and company policy.
+
+Employees should contact HR to understand eligibility, required documentation, and applicable leave duration.
+
+The employee should coordinate with HR and the reporting manager before the planned leave start date whenever possible.
+
+HR is responsible for explaining the applicable process and required documents.

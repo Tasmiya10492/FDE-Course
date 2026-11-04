@@ -1,0 +1,13 @@
+Document ID: HR005
+
+Title: Cancelling Leave Requests
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Employees who no longer need approved leave should submit a cancellation request through the HR portal.
+
+The reporting manager must review the cancellation request.
+
+The employee should check the HR portal to confirm that the leave cancellation has been approved.
+
+If the cancellation option is unavailable, the employee should contact HR for assistance.

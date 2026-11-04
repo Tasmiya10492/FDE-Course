@@ -1,0 +1,13 @@
+Document ID: HR015
+
+Title: Half-Day Leave
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Employees may request half-day leave when they need to be absent for part of a working day.
+
+The employee should select the appropriate half-day option in the HR portal.
+
+The request must be reviewed by the reporting manager.
+
+If the half-day option is unavailable or the employee is unsure which option to select, HR can provide assistance.

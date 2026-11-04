@@ -1,0 +1,13 @@
+Document ID: HR020
+
+Title: Leave Escalation and Disputes
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Employees who disagree with a leave decision should first discuss the matter with their reporting manager.
+
+If the issue remains unresolved, employees may contact the HR department for review.
+
+HR should examine the request details, relevant policy, and any supporting information.
+
+Sensitive leave disputes should be handled confidentially through the appropriate HR process.

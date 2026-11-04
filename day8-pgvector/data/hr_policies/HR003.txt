@@ -1,0 +1,13 @@
+Document ID: HR003
+
+Title: Applying for Annual Leave
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Employees must submit annual leave requests through the official HR portal.
+
+Each request should include the leave start date, end date, and reason for leave.
+
+Employees are encouraged to submit requests in advance to allow sufficient time for review.
+
+Submitting a request does not guarantee approval. Employees should wait for manager approval before taking leave.

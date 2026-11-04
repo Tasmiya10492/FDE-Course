@@ -25,6 +25,8 @@ dependencies = [
     "httpx",               # outbound HTTP calls (always set a timeout)
     "jinja2",              # HTML templates for the small web page
     "python-multipart",    # needed by FastAPI for HTML form posts
+    "psycopg[binary]>=3.3.7",
+    "ollama>=0.6.3",
 ]
 
 [dependency-groups]
@@ -55,6 +57,7 @@ max-complexity = 10        # keep functions small (PY-14)
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S101"]      # assert is how pytest checks things
+"day8-pgvector/tests/**" = ["S101"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -63,3 +66,8 @@ addopts = "-ra --strict-markers --strict-config"
 
 [tool.pyright]
 typeCheckingMode = "standard"   # move to "strict" once the team is comfortable
+
+[tool.uv.workspace]
+members = [
+    "day8-pgvector",
+]

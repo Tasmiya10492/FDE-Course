@@ -1,0 +1,13 @@
+Document ID: HR011
+
+Title: Unpaid Leave
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Employees may request unpaid leave when paid leave balances are insufficient or when the situation requires an extended absence.
+
+Unpaid leave requests are subject to management approval and company policy.
+
+Employees should discuss the proposed dates with their reporting manager before submitting the request.
+
+HR can explain how approved unpaid leave may affect salary and other employment benefits.

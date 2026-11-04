@@ -1,0 +1,4 @@
+ extname | extversion
+---------+------------
+ vector  | 0.8.7
+(1 row)
