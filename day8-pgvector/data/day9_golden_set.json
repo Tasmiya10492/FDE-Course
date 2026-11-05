@@ -1,0 +1,113 @@
+{
+    "title": "Day 9 HR Policy Retrieval Golden Set",
+    "tenant_id": "tenant_eval",
+    "user_roles": ["HR"],
+    "retrieval_limit": 5,
+    "questions": [
+        {
+            "id": "GQ01",
+            "question": "Who is eligible to apply for annual leave?",
+            "answerable": true,
+            "expected_chunk_ids": [86],
+            "expected_sources": ["HR001.txt"]
+        },
+        {
+            "id": "GQ02",
+            "question": "What factors determine the number of annual leave days?",
+            "answerable": true,
+            "expected_chunk_ids": [94],
+            "expected_sources": ["HR002.txt"]
+        },
+        {
+            "id": "GQ03",
+            "question": "What information must an annual leave request include?",
+            "answerable": true,
+            "expected_chunk_ids": [101],
+            "expected_sources": ["HR003.txt"]
+        },
+        {
+            "id": "GQ04",
+            "question": "What factors does a manager consider when reviewing leave?",
+            "answerable": true,
+            "expected_chunk_ids": [108],
+            "expected_sources": ["HR004.txt"]
+        },
+        {
+            "id": "GQ05",
+            "question": "How should an employee cancel approved leave?",
+            "answerable": true,
+            "expected_chunk_ids": [115],
+            "expected_sources": ["HR005.txt"]
+        },
+        {
+            "id": "GQ06",
+            "question": "What determines sick leave eligibility?",
+            "answerable": true,
+            "expected_chunk_ids": [122],
+            "expected_sources": ["HR006.txt"]
+        },
+        {
+            "id": "GQ07",
+            "question": "When may an employee need to submit medical documentation for sick leave?",
+            "answerable": true,
+            "expected_chunk_ids": [129],
+            "expected_sources": ["HR007.txt"]
+        },
+        {
+            "id": "GQ08",
+            "question": "Under what circumstances can emergency leave be requested?",
+            "answerable": true,
+            "expected_chunk_ids": [136],
+            "expected_sources": ["HR008.txt"]
+        },
+        {
+            "id": "GQ09",
+            "question": "What should employees contact HR to understand about maternity leave?",
+            "answerable": true,
+            "expected_chunk_ids": [144],
+            "expected_sources": ["HR009.txt"]
+        },
+        {
+            "id": "GQ10",
+            "question": "What dates should a paternity leave request include?",
+            "answerable": true,
+            "expected_chunk_ids": [152],
+            "expected_sources": ["HR010.txt"]
+        },
+        {
+            "id": "GQ11",
+            "question": "When may an employee request unpaid leave?",
+            "answerable": true,
+            "expected_chunk_ids": [157],
+            "expected_sources": ["HR011.txt"]
+        },
+        {
+            "id": "GQ12",
+            "question": "Where should employees check public holiday dates?",
+            "answerable": true,
+            "expected_chunk_ids": [165],
+            "expected_sources": ["HR012.txt"]
+        },
+        {
+            "id": "GQ13",
+            "question": "What is the company Wi-Fi password?",
+            "answerable": false,
+            "expected_chunk_ids": [],
+            "expected_sources": []
+        },
+        {
+            "id": "GQ14",
+            "question": "What is the exact number of annual leave days granted to every employee?",
+            "answerable": false,
+            "expected_chunk_ids": [],
+            "expected_sources": []
+        },
+        {
+            "id": "GQ15",
+            "question": "What is the exact number of sick leave days available to every employee?",
+            "answerable": false,
+            "expected_chunk_ids": [],
+            "expected_sources": []
+        }
+    ]
+}

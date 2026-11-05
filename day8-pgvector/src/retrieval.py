@@ -10,7 +10,7 @@ def search_similar(
     tenant_id: str,
     user_roles: list[str],
     limit: int = 5,
-) -> list[dict[str, str | float]]:
+) -> list[dict[str, str | int | float]]:
     """Search for relevant chunks while enforcing access permissions."""
     if not question or not question.strip():
         raise ValueError("Question cannot be empty")
@@ -26,6 +26,7 @@ def search_similar(
         rows = connection.execute(
             """
             SELECT
+                id,
                 content,
                 source,
                 embedding <=> %s::vector AS distance
@@ -51,9 +52,10 @@ def search_similar(
 
     return [
         {
-            "content": row[0],
-            "source": row[1],
-            "distance": float(row[2]),
+            "id": row[0],
+            "content": row[1],
+            "source": row[2],
+            "distance": float(row[3]),
         }
         for row in rows
     ]

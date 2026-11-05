@@ -16,6 +16,7 @@ def test_retrieval_returns_relevant_chunks() -> None:
     assert all("content" in result for result in results)
     assert all("source" in result for result in results)
     assert all("distance" in result for result in results)
+    assert all("id" in result for result in results)
 
 
 def test_retrieval_respects_result_limit() -> None:

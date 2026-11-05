@@ -1,0 +1,733 @@
+{
+  "title": "Day 9 HR Policy Retrieval Golden Set",
+  "tenant_id": "tenant_eval",
+  "retrieval_limit": 5,
+  "total_questions": 15,
+  "answerable_questions": 12,
+  "unanswerable_questions": 3,
+  "initial_distance_threshold_diagnostic": 0.4,
+  "metrics": {
+    "1": {
+      "hits": 8,
+      "total": 12,
+      "recall": 0.6666666666666666
+    },
+    "3": {
+      "hits": 10,
+      "total": 12,
+      "recall": 0.8333333333333334
+    },
+    "5": {
+      "hits": 11,
+      "total": 12,
+      "recall": 0.9166666666666666
+    }
+  },
+  "questions": [
+    {
+      "id": "GQ01",
+      "question": "Who is eligible to apply for annual leave?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        86
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 86,
+          "source": "HR001.txt",
+          "distance": 0.109
+        },
+        {
+          "chunk_id": 84,
+          "source": "HR001.txt",
+          "distance": 0.1315
+        },
+        {
+          "chunk_id": 98,
+          "source": "HR003.txt",
+          "distance": 0.1394
+        },
+        {
+          "chunk_id": 91,
+          "source": "HR002.txt",
+          "distance": 0.2155
+        },
+        {
+          "chunk_id": 93,
+          "source": "HR002.txt",
+          "distance": 0.2254
+        }
+      ],
+      "retrieved_chunk_ids": [
+        86,
+        84,
+        98,
+        91,
+        93
+      ],
+      "latency_ms": 601.41,
+      "hits_at_k": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ02",
+      "question": "What factors determine the number of annual leave days?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        94
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 94,
+          "source": "HR002.txt",
+          "distance": 0.1266
+        },
+        {
+          "chunk_id": 84,
+          "source": "HR001.txt",
+          "distance": 0.2426
+        },
+        {
+          "chunk_id": 98,
+          "source": "HR003.txt",
+          "distance": 0.2773
+        },
+        {
+          "chunk_id": 91,
+          "source": "HR002.txt",
+          "distance": 0.2856
+        },
+        {
+          "chunk_id": 86,
+          "source": "HR001.txt",
+          "distance": 0.2908
+        }
+      ],
+      "retrieved_chunk_ids": [
+        94,
+        84,
+        98,
+        91,
+        86
+      ],
+      "latency_ms": 49.66,
+      "hits_at_k": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ03",
+      "question": "What information must an annual leave request include?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        101
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 84,
+          "source": "HR001.txt",
+          "distance": 0.1908
+        },
+        {
+          "chunk_id": 98,
+          "source": "HR003.txt",
+          "distance": 0.1969
+        },
+        {
+          "chunk_id": 100,
+          "source": "HR003.txt",
+          "distance": 0.1977
+        },
+        {
+          "chunk_id": 88,
+          "source": "HR001.txt",
+          "distance": 0.1997
+        },
+        {
+          "chunk_id": 101,
+          "source": "HR003.txt",
+          "distance": 0.2041
+        }
+      ],
+      "retrieved_chunk_ids": [
+        84,
+        98,
+        100,
+        88,
+        101
+      ],
+      "latency_ms": 50.43,
+      "hits_at_k": {
+        "1": false,
+        "3": false,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ04",
+      "question": "What factors does a manager consider when reviewing leave?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        108
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 107,
+          "source": "HR004.txt",
+          "distance": 0.2085
+        },
+        {
+          "chunk_id": 201,
+          "source": "HR017.txt",
+          "distance": 0.2185
+        },
+        {
+          "chunk_id": 220,
+          "source": "HR020.txt",
+          "distance": 0.2223
+        },
+        {
+          "chunk_id": 173,
+          "source": "HR013.txt",
+          "distance": 0.2381
+        },
+        {
+          "chunk_id": 207,
+          "source": "HR018.txt",
+          "distance": 0.2388
+        }
+      ],
+      "retrieved_chunk_ids": [
+        107,
+        201,
+        220,
+        173,
+        207
+      ],
+      "latency_ms": 53.31,
+      "hits_at_k": {
+        "1": false,
+        "3": false,
+        "5": false
+      }
+    },
+    {
+      "id": "GQ05",
+      "question": "How should an employee cancel approved leave?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        115
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 115,
+          "source": "HR005.txt",
+          "distance": 0.1463
+        },
+        {
+          "chunk_id": 117,
+          "source": "HR005.txt",
+          "distance": 0.1575
+        },
+        {
+          "chunk_id": 103,
+          "source": "HR003.txt",
+          "distance": 0.2373
+        },
+        {
+          "chunk_id": 113,
+          "source": "HR005.txt",
+          "distance": 0.2384
+        },
+        {
+          "chunk_id": 220,
+          "source": "HR020.txt",
+          "distance": 0.2454
+        }
+      ],
+      "retrieved_chunk_ids": [
+        115,
+        117,
+        103,
+        113,
+        220
+      ],
+      "latency_ms": 45.58,
+      "hits_at_k": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ06",
+      "question": "What determines sick leave eligibility?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        122
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 120,
+          "source": "HR006.txt",
+          "distance": 0.13
+        },
+        {
+          "chunk_id": 124,
+          "source": "HR006.txt",
+          "distance": 0.1579
+        },
+        {
+          "chunk_id": 122,
+          "source": "HR006.txt",
+          "distance": 0.2083
+        },
+        {
+          "chunk_id": 129,
+          "source": "HR007.txt",
+          "distance": 0.2548
+        },
+        {
+          "chunk_id": 127,
+          "source": "HR007.txt",
+          "distance": 0.2606
+        }
+      ],
+      "retrieved_chunk_ids": [
+        120,
+        124,
+        122,
+        129,
+        127
+      ],
+      "latency_ms": 44.81,
+      "hits_at_k": {
+        "1": false,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ07",
+      "question": "When may an employee need to submit medical documentation for sick leave?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        129
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 129,
+          "source": "HR007.txt",
+          "distance": 0.0786
+        },
+        {
+          "chunk_id": 127,
+          "source": "HR007.txt",
+          "distance": 0.2087
+        },
+        {
+          "chunk_id": 122,
+          "source": "HR006.txt",
+          "distance": 0.2143
+        },
+        {
+          "chunk_id": 124,
+          "source": "HR006.txt",
+          "distance": 0.2419
+        },
+        {
+          "chunk_id": 200,
+          "source": "HR017.txt",
+          "distance": 0.2459
+        }
+      ],
+      "retrieved_chunk_ids": [
+        129,
+        127,
+        122,
+        124,
+        200
+      ],
+      "latency_ms": 57.66,
+      "hits_at_k": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ08",
+      "question": "Under what circumstances can emergency leave be requested?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        136
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 136,
+          "source": "HR008.txt",
+          "distance": 0.1102
+        },
+        {
+          "chunk_id": 134,
+          "source": "HR008.txt",
+          "distance": 0.1962
+        },
+        {
+          "chunk_id": 157,
+          "source": "HR011.txt",
+          "distance": 0.2444
+        },
+        {
+          "chunk_id": 152,
+          "source": "HR010.txt",
+          "distance": 0.2825
+        },
+        {
+          "chunk_id": 151,
+          "source": "HR010.txt",
+          "distance": 0.2887
+        }
+      ],
+      "retrieved_chunk_ids": [
+        136,
+        134,
+        157,
+        152,
+        151
+      ],
+      "latency_ms": 48.35,
+      "hits_at_k": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ09",
+      "question": "What should employees contact HR to understand about maternity leave?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        144
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 144,
+          "source": "HR009.txt",
+          "distance": 0.1671
+        },
+        {
+          "chunk_id": 209,
+          "source": "HR018.txt",
+          "distance": 0.1884
+        },
+        {
+          "chunk_id": 151,
+          "source": "HR010.txt",
+          "distance": 0.1895
+        },
+        {
+          "chunk_id": 180,
+          "source": "HR014.txt",
+          "distance": 0.2151
+        },
+        {
+          "chunk_id": 125,
+          "source": "HR006.txt",
+          "distance": 0.222
+        }
+      ],
+      "retrieved_chunk_ids": [
+        144,
+        209,
+        151,
+        180,
+        125
+      ],
+      "latency_ms": 49.16,
+      "hits_at_k": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ10",
+      "question": "What dates should a paternity leave request include?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        152
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 101,
+          "source": "HR003.txt",
+          "distance": 0.2003
+        },
+        {
+          "chunk_id": 148,
+          "source": "HR010.txt",
+          "distance": 0.2201
+        },
+        {
+          "chunk_id": 152,
+          "source": "HR010.txt",
+          "distance": 0.2466
+        },
+        {
+          "chunk_id": 150,
+          "source": "HR010.txt",
+          "distance": 0.2712
+        },
+        {
+          "chunk_id": 141,
+          "source": "HR009.txt",
+          "distance": 0.326
+        }
+      ],
+      "retrieved_chunk_ids": [
+        101,
+        148,
+        152,
+        150,
+        141
+      ],
+      "latency_ms": 47.46,
+      "hits_at_k": {
+        "1": false,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ11",
+      "question": "When may an employee request unpaid leave?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        157
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 157,
+          "source": "HR011.txt",
+          "distance": 0.1031
+        },
+        {
+          "chunk_id": 158,
+          "source": "HR011.txt",
+          "distance": 0.1654
+        },
+        {
+          "chunk_id": 155,
+          "source": "HR011.txt",
+          "distance": 0.2202
+        },
+        {
+          "chunk_id": 185,
+          "source": "HR015.txt",
+          "distance": 0.2232
+        },
+        {
+          "chunk_id": 138,
+          "source": "HR008.txt",
+          "distance": 0.2412
+        }
+      ],
+      "retrieved_chunk_ids": [
+        157,
+        158,
+        155,
+        185,
+        138
+      ],
+      "latency_ms": 62.04,
+      "hits_at_k": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ12",
+      "question": "Where should employees check public holiday dates?",
+      "answerable": true,
+      "expected_chunk_ids": [
+        165
+      ],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 165,
+          "source": "HR012.txt",
+          "distance": 0.0947
+        },
+        {
+          "chunk_id": 166,
+          "source": "HR012.txt",
+          "distance": 0.2378
+        },
+        {
+          "chunk_id": 162,
+          "source": "HR012.txt",
+          "distance": 0.2519
+        },
+        {
+          "chunk_id": 167,
+          "source": "HR012.txt",
+          "distance": 0.2607
+        },
+        {
+          "chunk_id": 164,
+          "source": "HR012.txt",
+          "distance": 0.2669
+        }
+      ],
+      "retrieved_chunk_ids": [
+        165,
+        166,
+        162,
+        167,
+        164
+      ],
+      "latency_ms": 43.94,
+      "hits_at_k": {
+        "1": true,
+        "3": true,
+        "5": true
+      }
+    },
+    {
+      "id": "GQ13",
+      "question": "What is the company Wi-Fi password?",
+      "answerable": false,
+      "expected_chunk_ids": [],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 208,
+          "source": "HR018.txt",
+          "distance": 0.4436
+        },
+        {
+          "chunk_id": 108,
+          "source": "HR004.txt",
+          "distance": 0.4927
+        },
+        {
+          "chunk_id": 164,
+          "source": "HR012.txt",
+          "distance": 0.4935
+        },
+        {
+          "chunk_id": 95,
+          "source": "HR002.txt",
+          "distance": 0.4946
+        },
+        {
+          "chunk_id": 151,
+          "source": "HR010.txt",
+          "distance": 0.4948
+        }
+      ],
+      "retrieved_chunk_ids": [
+        208,
+        108,
+        164,
+        95,
+        151
+      ],
+      "latency_ms": 45.85,
+      "nearest_distance": 0.4436,
+      "within_initial_distance_threshold": false
+    },
+    {
+      "id": "GQ14",
+      "question": "What is the exact number of annual leave days granted to every employee?",
+      "answerable": false,
+      "expected_chunk_ids": [],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 94,
+          "source": "HR002.txt",
+          "distance": 0.1291
+        },
+        {
+          "chunk_id": 93,
+          "source": "HR002.txt",
+          "distance": 0.2185
+        },
+        {
+          "chunk_id": 86,
+          "source": "HR001.txt",
+          "distance": 0.241
+        },
+        {
+          "chunk_id": 84,
+          "source": "HR001.txt",
+          "distance": 0.2423
+        },
+        {
+          "chunk_id": 192,
+          "source": "HR016.txt",
+          "distance": 0.2544
+        }
+      ],
+      "retrieved_chunk_ids": [
+        94,
+        93,
+        86,
+        84,
+        192
+      ],
+      "latency_ms": 54.71,
+      "nearest_distance": 0.1291,
+      "within_initial_distance_threshold": true
+    },
+    {
+      "id": "GQ15",
+      "question": "What is the exact number of sick leave days available to every employee?",
+      "answerable": false,
+      "expected_chunk_ids": [],
+      "retrieved_chunks": [
+        {
+          "chunk_id": 124,
+          "source": "HR006.txt",
+          "distance": 0.1674
+        },
+        {
+          "chunk_id": 120,
+          "source": "HR006.txt",
+          "distance": 0.2417
+        },
+        {
+          "chunk_id": 125,
+          "source": "HR006.txt",
+          "distance": 0.2506
+        },
+        {
+          "chunk_id": 122,
+          "source": "HR006.txt",
+          "distance": 0.2524
+        },
+        {
+          "chunk_id": 94,
+          "source": "HR002.txt",
+          "distance": 0.2529
+        }
+      ],
+      "retrieved_chunk_ids": [
+        124,
+        120,
+        125,
+        122,
+        94
+      ],
+      "latency_ms": 54.69,
+      "nearest_distance": 0.1674,
+      "within_initial_distance_threshold": true
+    }
+  ]
+}
