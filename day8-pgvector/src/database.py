@@ -1,22 +1,16 @@
 """PostgreSQL connection management."""
 
-import os
-
 import psycopg
-from dotenv import load_dotenv
 from pgvector.psycopg import register_vector
 
-load_dotenv()
+from src.config import get_settings
 
 
 def get_connection() -> psycopg.Connection:
     """Create and return a PostgreSQL connection."""
-    database_url = os.getenv("DATABASE_URL")
+    settings = get_settings()
 
-    if not database_url:
-        raise ValueError("DATABASE_URL is not configured")
-
-    connection = psycopg.connect(database_url)
+    connection = psycopg.connect(settings.database_url)
     register_vector(connection)
 
     return connection

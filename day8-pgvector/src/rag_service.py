@@ -1,13 +1,9 @@
 """Day 9 RAG service with citations, abstention and context budgeting."""
 
-import os
-
 import ollama
-from dotenv import load_dotenv
 
+from src.config import get_settings
 from src.retrieval import search_similar
-
-load_dotenv()
 
 MAX_DISTANCE = 0.40
 DEFAULT_CONTEXT_TOKENS = 2000
@@ -87,8 +83,9 @@ def ask(
     )
 
     # Step 6: Configure the local Ollama model.
-    model = os.getenv("OLLAMA_CHAT_MODEL", "qwen3.5:2b")
-    host = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+    settings = get_settings()
+    model = settings.ollama_chat_model
+    host = settings.ollama_host
 
     client = ollama.Client(host=host)
 
@@ -112,7 +109,12 @@ def ask(
                 "content": (f"Policy passages:\n{context}\n\nQuestion: {question}"),
             },
         ],
-        options={"temperature": 0},
+        think=False,
+        options={
+            "temperature": 0,
+            "num_predict": 256,
+            "num_ctx": 4096,
+        },
     )
 
     answer = (response.message.content or "").strip()
