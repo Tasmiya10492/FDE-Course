@@ -3,15 +3,19 @@ name = "day8-pgvector"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
+    "fastapi>=0.162.0",
     "ollama>=0.6.3",
     "pgvector>=0.5.1",
     "psycopg[binary]>=3.3.7",
+    "pydantic-settings>=2.16.1",
     "python-dotenv>=1.2.4",
+    "uvicorn[standard]>=0.54.0",
 ]
 
 [dependency-groups]
 dev = [
     "bandit>=1.9.4",
+    "httpx>=0.28.1",
     "pip-audit>=2.10.1",
     "pyright>=1.1.414",
     "pytest>=9.1.1",

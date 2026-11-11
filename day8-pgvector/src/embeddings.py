@@ -1,11 +1,8 @@
 """Generate text embeddings using Ollama."""
 
-import os
-
 import ollama
-from dotenv import load_dotenv
 
-load_dotenv()
+from src.config import get_settings
 
 
 def generate_embedding(text: str) -> list[float]:
@@ -13,8 +10,9 @@ def generate_embedding(text: str) -> list[float]:
     if not text or not text.strip():
         raise ValueError("Text cannot be empty")
 
-    model = os.getenv("OLLAMA_MODEL", "nomic-embed-text:latest")
-    host = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+    settings = get_settings()
+    model = settings.ollama_model
+    host = settings.ollama_host
 
     client = ollama.Client(host=host)
 

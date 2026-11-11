@@ -312,15 +312,19 @@ name = "day8-pgvector"
 version = "0.1.0"
 source = { virtual = "day8-pgvector" }
 dependencies = [
+    { name = "fastapi" },
     { name = "ollama" },
     { name = "pgvector" },
     { name = "psycopg", extra = ["binary"] },
+    { name = "pydantic-settings" },
     { name = "python-dotenv" },
+    { name = "uvicorn", extra = ["standard"] },
 ]
 
 [package.dev-dependencies]
 dev = [
     { name = "bandit" },
+    { name = "httpx" },
     { name = "pip-audit" },
     { name = "pyright" },
     { name = "pytest" },
@@ -330,15 +334,19 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "fastapi", specifier = ">=0.162.0" },
     { name = "ollama", specifier = ">=0.6.3" },
     { name = "pgvector", specifier = ">=0.5.1" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.3.7" },
+    { name = "pydantic-settings", specifier = ">=2.16.1" },
     { name = "python-dotenv", specifier = ">=1.2.4" },
+    { name = "uvicorn", extras = ["standard"], specifier = ">=0.54.0" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "bandit", specifier = ">=1.9.4" },
+    { name = "httpx", specifier = ">=0.28.1" },
     { name = "pip-audit", specifier = ">=2.10.1" },
     { name = "pyright", specifier = ">=1.1.414" },
     { name = "pytest", specifier = ">=9.1.1" },
