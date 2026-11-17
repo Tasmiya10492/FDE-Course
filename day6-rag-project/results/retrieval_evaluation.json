@@ -1,0 +1,332 @@
+[
+    {
+        "method": "fixed",
+        "question": "Who is eligible for annual leave?",
+        "expected_policy": "HR001",
+        "retrieved_policy_ids": [
+            "HR002",
+            "HR001",
+            "HR001"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "fixed",
+        "question": "How many days of annual leave are employees entitled to?",
+        "expected_policy": "HR002",
+        "retrieved_policy_ids": [
+            "HR002",
+            "HR002",
+            "HR013"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "fixed",
+        "question": "How can employees submit an annual leave request?",
+        "expected_policy": "HR003",
+        "retrieved_policy_ids": [
+            "HR001",
+            "HR002",
+            "HR008"
+        ],
+        "hit_at_3": false
+    },
+    {
+        "method": "fixed",
+        "question": "Who reviews and approves leave requests?",
+        "expected_policy": "HR004",
+        "retrieved_policy_ids": [
+            "HR018",
+            "HR003",
+            "HR017"
+        ],
+        "hit_at_3": false
+    },
+    {
+        "method": "fixed",
+        "question": "How can an employee cancel an approved leave request?",
+        "expected_policy": "HR005",
+        "retrieved_policy_ids": [
+            "HR005",
+            "HR018",
+            "HR003"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "fixed",
+        "question": "What are the eligibility rules for sick leave?",
+        "expected_policy": "HR006",
+        "retrieved_policy_ids": [
+            "HR006",
+            "HR006",
+            "HR007"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "fixed",
+        "question": "What documents are required for sick leave?",
+        "expected_policy": "HR007",
+        "retrieved_policy_ids": [
+            "HR007",
+            "HR006",
+            "HR006"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "fixed",
+        "question": "How should employees request emergency leave?",
+        "expected_policy": "HR008",
+        "retrieved_policy_ids": [
+            "HR008",
+            "HR008",
+            "HR006"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "fixed",
+        "question": "What maternity leave provisions are available?",
+        "expected_policy": "HR009",
+        "retrieved_policy_ids": [
+            "HR009",
+            "HR010",
+            "HR010"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "fixed",
+        "question": "What paternity leave provisions are available?",
+        "expected_policy": "HR010",
+        "retrieved_policy_ids": [
+            "HR010",
+            "HR018",
+            "HR010"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "sentence",
+        "question": "Who is eligible for annual leave?",
+        "expected_policy": "HR001",
+        "retrieved_policy_ids": [
+            "HR002",
+            "HR001",
+            "HR003"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "sentence",
+        "question": "How many days of annual leave are employees entitled to?",
+        "expected_policy": "HR002",
+        "retrieved_policy_ids": [
+            "HR002",
+            "HR013",
+            "HR001"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "sentence",
+        "question": "How can employees submit an annual leave request?",
+        "expected_policy": "HR003",
+        "retrieved_policy_ids": [
+            "HR010",
+            "HR001",
+            "HR002"
+        ],
+        "hit_at_3": false
+    },
+    {
+        "method": "sentence",
+        "question": "Who reviews and approves leave requests?",
+        "expected_policy": "HR004",
+        "retrieved_policy_ids": [
+            "HR018",
+            "HR003",
+            "HR017"
+        ],
+        "hit_at_3": false
+    },
+    {
+        "method": "sentence",
+        "question": "How can an employee cancel an approved leave request?",
+        "expected_policy": "HR005",
+        "retrieved_policy_ids": [
+            "HR005",
+            "HR018",
+            "HR005"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "sentence",
+        "question": "What are the eligibility rules for sick leave?",
+        "expected_policy": "HR006",
+        "retrieved_policy_ids": [
+            "HR006",
+            "HR006",
+            "HR007"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "sentence",
+        "question": "What documents are required for sick leave?",
+        "expected_policy": "HR007",
+        "retrieved_policy_ids": [
+            "HR007",
+            "HR006",
+            "HR006"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "sentence",
+        "question": "How should employees request emergency leave?",
+        "expected_policy": "HR008",
+        "retrieved_policy_ids": [
+            "HR010",
+            "HR008",
+            "HR009"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "sentence",
+        "question": "What maternity leave provisions are available?",
+        "expected_policy": "HR009",
+        "retrieved_policy_ids": [
+            "HR009",
+            "HR010",
+            "HR010"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "sentence",
+        "question": "What paternity leave provisions are available?",
+        "expected_policy": "HR010",
+        "retrieved_policy_ids": [
+            "HR010",
+            "HR009",
+            "HR014"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "Who is eligible for annual leave?",
+        "expected_policy": "HR001",
+        "retrieved_policy_ids": [
+            "HR001",
+            "HR001",
+            "HR003"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "How many days of annual leave are employees entitled to?",
+        "expected_policy": "HR002",
+        "retrieved_policy_ids": [
+            "HR002",
+            "HR002",
+            "HR001"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "How can employees submit an annual leave request?",
+        "expected_policy": "HR003",
+        "retrieved_policy_ids": [
+            "HR003",
+            "HR001",
+            "HR001"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "Who reviews and approves leave requests?",
+        "expected_policy": "HR004",
+        "retrieved_policy_ids": [
+            "HR004",
+            "HR017",
+            "HR018"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "How can an employee cancel an approved leave request?",
+        "expected_policy": "HR005",
+        "retrieved_policy_ids": [
+            "HR005",
+            "HR005",
+            "HR003"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "What are the eligibility rules for sick leave?",
+        "expected_policy": "HR006",
+        "retrieved_policy_ids": [
+            "HR006",
+            "HR006",
+            "HR006"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "What documents are required for sick leave?",
+        "expected_policy": "HR007",
+        "retrieved_policy_ids": [
+            "HR007",
+            "HR007",
+            "HR006"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "How should employees request emergency leave?",
+        "expected_policy": "HR008",
+        "retrieved_policy_ids": [
+            "HR008",
+            "HR008",
+            "HR008"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "What maternity leave provisions are available?",
+        "expected_policy": "HR009",
+        "retrieved_policy_ids": [
+            "HR009",
+            "HR009",
+            "HR010"
+        ],
+        "hit_at_3": true
+    },
+    {
+        "method": "paragraph",
+        "question": "What paternity leave provisions are available?",
+        "expected_policy": "HR010",
+        "retrieved_policy_ids": [
+            "HR010",
+            "HR010",
+            "HR009"
+        ],
+        "hit_at_3": true
+    }
+]

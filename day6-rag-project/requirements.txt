@@ -1,0 +1,4 @@
+chromadb==1.5.9
+ollama==0.6.3
+tiktoken==0.14.0
+pytest==9.2.0

@@ -1,0 +1,13 @@
+Document ID: HR019
+
+Title: Unauthorized Absence
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+An absence may be considered unauthorized when an employee does not attend work without approved leave or appropriate notification.
+
+Employees should inform their reporting manager as soon as possible if an unexpected situation prevents them from attending work.
+
+Managers should record and review unexplained absences according to company policy.
+
+Employees should contact HR to resolve attendance records or absence-related concerns.

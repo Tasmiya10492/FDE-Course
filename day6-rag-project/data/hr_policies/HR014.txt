@@ -1,0 +1,13 @@
+Document ID: HR014
+
+Title: Leave Encashment
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Leave encashment refers to payment for eligible unused leave days where permitted by company policy.
+
+Eligibility, calculation methods, and payment timelines depend on employment terms and applicable rules.
+
+Employees should contact HR to confirm whether leave encashment is available to them.
+
+HR is responsible for explaining the applicable calculation and approval process.

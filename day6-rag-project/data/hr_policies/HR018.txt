@@ -1,0 +1,13 @@
+Document ID: HR018
+
+Title: Leave During Notice Period
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Employees serving a notice period should follow the normal leave request process unless company policy specifies otherwise.
+
+Leave requests during the notice period require review by the reporting manager and HR where applicable.
+
+Approval depends on business requirements, employment terms, and company policy.
+
+Employees should contact HR if they need clarification about unused leave or final settlement.

@@ -1,0 +1,13 @@
+Document ID: HR008
+
+Title: Emergency Leave
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Emergency leave may be requested when an unexpected personal or family situation requires an employee's immediate attention.
+
+Employees should notify their reporting manager as soon as reasonably possible.
+
+The employee should submit the leave request through the HR portal when practical.
+
+The manager and HR department will review the request according to company policy.

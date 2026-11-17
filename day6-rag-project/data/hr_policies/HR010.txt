@@ -1,0 +1,13 @@
+Document ID: HR010
+
+Title: Paternity Leave
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Eligible employees may apply for paternity leave according to applicable law and company policy.
+
+Employees should contact HR to confirm eligibility and the available leave entitlement.
+
+A leave request should be submitted through the HR portal with the expected dates.
+
+The reporting manager reviews the request, and HR can assist with policy-related questions.

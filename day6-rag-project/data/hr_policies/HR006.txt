@@ -1,0 +1,13 @@
+Document ID: HR006
+
+Title: Sick Leave Eligibility
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Employees who are unable to work due to illness may apply for sick leave according to their employment terms and company policy.
+
+Employees should inform their reporting manager as soon as possible when they are unable to attend work.
+
+Sick leave eligibility and available days depend on the employee's applicable leave policy.
+
+Employees can contact HR to confirm their sick leave balance.

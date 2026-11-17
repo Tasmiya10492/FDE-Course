@@ -1,0 +1,17 @@
+# Python virtual environments
+.venv/
+venv/
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Generated ChromaDB database
+results/chroma_db/
+
+# Environment secrets
+.env
+.env.*
+!.env.example

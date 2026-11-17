@@ -1,0 +1,142 @@
+[
+    {
+        "question": "Who is eligible for annual leave?",
+        "answer": "Based on Policy ID: HR001 Content, Employees who have completed the required eligibility period are entitled to apply for annual leave.",
+        "retrieved_policy_ids": [
+            "HR001",
+            "HR001",
+            "HR003"
+        ],
+        "retrieved_chunks": [
+            "Title: Annual Leave Eligibility",
+            "Employees who have completed the required\neligibility period are entitled to apply for\nannual leave.",
+            "Title: Applying for Annual Leave"
+        ]
+    },
+    {
+        "question": "How many days of annual leave are employees entitled to?",
+        "answer": "Based on the provided policy context, there is no specific fixed number of annual leave days stated for employees. The document indicates that entitlement depends on employee grade, contract type, and length of service (Policy ID: HR002). Since a definitive count is not provided in the text, the information regarding an exact number is not available.\n\nPlease contact HR to determine your specific entitlement based on your employment terms.",
+        "retrieved_policy_ids": [
+            "HR002",
+            "HR002",
+            "HR001"
+        ],
+        "retrieved_chunks": [
+            "The total number of annual leave days may vary depending on employee grade, contract type, and length of service.",
+            "Employees receive an annual leave entitlement based on their employment terms and company policy.",
+            "Employees who have completed the required\neligibility period are entitled to apply for\nannual leave."
+        ]
+    },
+    {
+        "question": "How can employees submit an annual leave request?",
+        "answer": "Based on the provided policy context, employees must submit an annual leave request **through the official HR portal**. This is explicitly stated in Policy ID HR003 (\"Employees must submit annual leave requests through the official HR portal\") and also repeated under Policy ID HR001 (\"All annual leave requests must be submitted through the official HR portal\").",
+        "retrieved_policy_ids": [
+            "HR003",
+            "HR001",
+            "HR001"
+        ],
+        "retrieved_chunks": [
+            "Employees must submit annual leave requests through the official HR portal.",
+            "All annual leave requests must be submitted\nthrough the official HR portal.",
+            "Employees who have completed the required\neligibility period are entitled to apply for\nannual leave."
+        ]
+    },
+    {
+        "question": "Who reviews and approves leave requests?",
+        "answer": "Based on the provided policy context:\n\n*   **Reporting Manager:** Leave requests are generally reviewed by the employee's reporting manager (Policy HR004 and Policy HR017).\n*   **HR (Human Resources):** Additionally, if leave requests occur during the notice period, they also require review from the reporting manager and HR where applicable (Policy HR018).\n\nWhile the policies explicitly mention \"review,\" this is the designated decision-making authority for approving leave requests based on the context provided.",
+        "retrieved_policy_ids": [
+            "HR004",
+            "HR017",
+            "HR018"
+        ],
+        "retrieved_chunks": [
+            "Leave requests are reviewed by the employee's reporting manager.",
+            "The reporting manager reviews leave requests based on business requirements and applicable policy.",
+            "Leave requests during the notice period require review by the reporting manager and HR where applicable."
+        ]
+    },
+    {
+        "question": "How can an employee cancel an approved leave request?",
+        "answer": "According to Policy ID: HR005, an employee can cancel their approved leave request by submitting a cancellation request through the HR portal. Additionally, after submitting the request, the employee should check the HR portal to confirm that the leave cancellation has been approved.",
+        "retrieved_policy_ids": [
+            "HR005",
+            "HR005",
+            "HR003"
+        ],
+        "retrieved_chunks": [
+            "Employees who no longer need approved leave should submit a cancellation request through the HR portal.",
+            "The employee should check the HR portal to confirm that the leave cancellation has been approved.",
+            "Submitting a request does not guarantee approval. Employees should wait for manager approval before taking leave."
+        ]
+    },
+    {
+        "question": "What are the eligibility rules for sick leave?",
+        "answer": "Based on the provided context, specific sick leave eligibility rules and available days are not explicitly defined in this document. The text states that eligibility and availability depend on the employee's applicable leave policy, and applications must be made according to employment terms and company policy. Please contact HR for details regarding your specific entitlements.",
+        "retrieved_policy_ids": [
+            "HR006",
+            "HR006",
+            "HR006"
+        ],
+        "retrieved_chunks": [
+            "Title: Sick Leave Eligibility",
+            "Sick leave eligibility and available days depend on the employee's applicable leave policy.",
+            "Employees who are unable to work due to illness may apply for sick leave according to their employment terms and company policy."
+        ]
+    },
+    {
+        "question": "What documents are required for sick leave?",
+        "answer": "Based on the supplied policy context, there is no list of specific medical documents required for sick leave provided. Policy HR007 (Sick Leave Documentation) states that employees may be required to submit medical documentation depending on the duration of absence and company policy, but it does not specify which documents or types of documentation are necessary.\n\nSince specific requirements are not defined in the context, please contact HR for further information.",
+        "retrieved_policy_ids": [
+            "HR007",
+            "HR007",
+            "HR006"
+        ],
+        "retrieved_chunks": [
+            "Title: Sick Leave Documentation",
+            "Employees taking sick leave may be required to submit medical documentation depending on the duration of absence and company policy.",
+            "Title: Sick Leave Eligibility"
+        ]
+    },
+    {
+        "question": "How should employees request emergency leave?",
+        "answer": "According to Policy ID: HR008, employees should submit the leave request through the HR portal when practical.",
+        "retrieved_policy_ids": [
+            "HR008",
+            "HR008",
+            "HR008"
+        ],
+        "retrieved_chunks": [
+            "Emergency leave may be requested when an unexpected personal or family situation requires an employee's immediate attention.",
+            "Title: Emergency Leave",
+            "The employee should submit the leave request through the HR portal when practical."
+        ]
+    },
+    {
+        "question": "What maternity leave provisions are available?",
+        "answer": "Based on the provided context, there is no specific detail regarding the duration or nature of maternity leave entitlements. The policy only states that eligible employees may apply for maternity leave according to applicable law and company policy. Specific provisions are not available in this context; therefore, please contact HR for further details.",
+        "retrieved_policy_ids": [
+            "HR009",
+            "HR009",
+            "HR010"
+        ],
+        "retrieved_chunks": [
+            "Eligible employees may apply for maternity leave according to applicable law and company policy.",
+            "Title: Maternity Leave",
+            "Eligible employees may apply for paternity leave according to applicable law and company policy."
+        ]
+    },
+    {
+        "question": "What paternity leave provisions are available?",
+        "answer": "The provided context states that eligible employees may apply for paternity leave according to applicable law and company policy, but it does not specify the exact duration, coverage period, or other specific entitlements available for paternity leave. Since specific details are not available within the supplied policy text, you should contact HR for further information regarding your eligibility and leave benefits.",
+        "retrieved_policy_ids": [
+            "HR010",
+            "HR010",
+            "HR009"
+        ],
+        "retrieved_chunks": [
+            "Title: Paternity Leave",
+            "Eligible employees may apply for paternity leave according to applicable law and company policy.",
+            "Eligible employees may apply for maternity leave according to applicable law and company policy."
+        ]
+    }
+]
