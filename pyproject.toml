@@ -58,6 +58,8 @@ max-complexity = 10        # keep functions small (PY-14)
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S101"]      # assert is how pytest checks things
 "day8-pgvector/tests/**" = ["S101"]
+"day13-n8n/test_simulator.py" = ["S101", "S105"]
+"day13-n8n/webhook_simulator.py" = ["S105", "T201"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
