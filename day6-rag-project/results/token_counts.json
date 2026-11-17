@@ -1,0 +1,26 @@
+{
+    "prose": {
+        "character_count": 59,
+        "token_count": 11
+    },
+    "code": {
+        "character_count": 93,
+        "token_count": 23
+    },
+    "json": {
+        "character_count": 71,
+        "token_count": 25
+    },
+    "english": {
+        "character_count": 63,
+        "token_count": 10
+    },
+    "hindi": {
+        "character_count": 41,
+        "token_count": 42
+    },
+    "french": {
+        "character_count": 46,
+        "token_count": 12
+    }
+}

@@ -1,0 +1,13 @@
+Document ID: HR002
+
+Title: Annual Leave Entitlement
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Employees receive an annual leave entitlement based on their employment terms and company policy.
+
+The total number of annual leave days may vary depending on employee grade, contract type, and length of service.
+
+Employees can check their available leave balance through the HR portal.
+
+For entitlement-related questions, employees should contact the HR department.

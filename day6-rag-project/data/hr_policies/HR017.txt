@@ -1,0 +1,13 @@
+Document ID: HR017
+
+Title: Leave During Probation
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Leave eligibility during the probation period depends on employment terms and company policy.
+
+Employees should review their employment documents or contact HR before submitting a leave request.
+
+The reporting manager reviews leave requests based on business requirements and applicable policy.
+
+HR is responsible for clarifying which leave types are available during probation.
