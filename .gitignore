@@ -7,6 +7,10 @@ __pycache__/
 
 # Virtual environments
 .venv/
+.venv*/
 
 # Environment variables and secrets
 .env
+
+# Ruff cache
+.ruff_cache/

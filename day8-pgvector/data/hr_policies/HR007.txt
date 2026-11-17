@@ -1,0 +1,13 @@
+Document ID: HR007
+
+Title: Sick Leave Documentation
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Employees taking sick leave may be required to submit medical documentation depending on the duration of absence and company policy.
+
+Any required medical certificate should be submitted through the approved HR process.
+
+Employees should inform their manager if documentation cannot be provided immediately.
+
+HR is responsible for reviewing submitted documents and clarifying any missing information.

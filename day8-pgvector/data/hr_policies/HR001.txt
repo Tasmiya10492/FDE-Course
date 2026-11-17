@@ -1,0 +1,19 @@
+Document ID: HR001
+
+Title: Annual Leave Eligibility
+
+This is a synthetic HR policy document created
+for the Day 6 RAG learning project.
+
+Employees who have completed the required
+eligibility period are entitled to apply for
+annual leave.
+
+New employees must check their employment terms
+and HR policy before applying.
+
+All annual leave requests must be submitted
+through the official HR portal.
+
+The HR manager is responsible for reviewing
+and approving requests.

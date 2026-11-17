@@ -1,0 +1,13 @@
+Document ID: HR012
+
+Title: Public Holidays
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+The company publishes a holiday calendar for each applicable location.
+
+Employees should check the official holiday calendar to identify public holidays.
+
+Employees required to work on a public holiday should follow the applicable manager approval and compensation process.
+
+Questions about holiday schedules should be directed to HR.

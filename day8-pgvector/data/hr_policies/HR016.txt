@@ -1,0 +1,13 @@
+Document ID: HR016
+
+Title: Leave Balance Calculation
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+An employee's leave balance represents the eligible leave available for use.
+
+The balance may depend on leave entitlement, leave already taken, approved future leave, and applicable carry-forward rules.
+
+Employees should use the HR portal to view their current leave balance.
+
+If the displayed balance appears incorrect, employees should contact HR for verification.

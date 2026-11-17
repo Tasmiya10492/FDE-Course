@@ -1,0 +1,15 @@
+Document ID: HR004
+
+Title: Leave Approval Process
+
+This is a synthetic HR policy document created for the Day 6 RAG learning project.
+
+Leave requests are reviewed by the employee's reporting manager.
+
+The manager checks team availability, workload, and business requirements before making a decision.
+
+Approved requests are updated in the HR portal.
+
+If a request is rejected, the manager should provide a reason to the employee.
+
+Employees can contact HR if an approval is delayed.

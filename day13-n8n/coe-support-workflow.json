@@ -1,0 +1,183 @@
+{
+  "name": "COE Support Webhook",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "coe-support",
+        "authentication": "headerAuth",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "ea59410c-7b68-4c56-a0ad-eb268f014cc9",
+      "name": "Webhook",
+      "webhookId": "10c0c7df-63a5-42ae-acf7-561a25dd58b5"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst items = $input.all();\n\nreturn items.map((item) => {\n  // The Webhook node places incoming request data inside body.\n  const body = item.json.body ?? {};\n\n  const user = body.user;\n  const message = body.message;\n\n  const errors = [];\n\n  // Check that user is present and is text.\n  if (typeof user !== \"string\" || user.trim() === \"\") {\n    errors.push(\"User is required and must be text.\");\n  }\n\n  // Check that message is present and is text.\n  if (typeof message !== \"string\" || message.trim() === \"\") {\n    errors.push(\"Message is required and must be text.\");\n  }\n\n  // Match the FastAPI request limit of 2,000 characters.\n  if (typeof message === \"string\" && message.length > 2000) {\n    errors.push(\"Message must not exceed 2000 characters.\");\n  }\n\n  return {\n    json: {\n      ...item.json,\n      user: typeof user === \"string\" ? user.trim() : \"\",\n      message: typeof message === \"string\" ? message.trim() : \"\",\n      isValid: errors.length === 0,\n      validationError: errors.join(\" \")\n    }\n  };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        224,
+        0
+      ],
+      "id": "d3e5a5d4-9c25-49b3-97b3-543436bc92db",
+      "name": "Code in JavaScript",
+      "executeOnce": false,
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "f0591f01-4e03-4026-a3f1-218f9ca68ee0",
+              "leftValue": "={{ $json.isValid }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        448,
+        0
+      ],
+      "id": "749842be-bb33-4cb6-ac44-d18634fc930d",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  \"status\": \"rejected\",\n  \"error\": $json.validationError\n} }}",
+        "options": {
+          "responseCode": 400
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        672,
+        96
+      ],
+      "id": "79d2dfa5-5404-4f80-ba3e-f0ff8ad1a081",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:8000/ask",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n  \"question\": $json.message\n} }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        672,
+        -96
+      ],
+      "id": "ce2d549b-c6e4-4f42-95c9-9342ca7980e9",
+      "name": "Call FastAPI"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ {\n  \"status\": \"ok\",\n  \"answer\": $json.answer,\n  \"citations\": $json.citations\n} }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        784,
+        -96
+      ],
+      "id": "50d22947-d467-49ef-a193-e434193ac647",
+      "name": "Return Success Response"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Call FastAPI",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call FastAPI": {
+      "main": [
+        [
+          {
+            "node": "Return Success Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "nodeGroups": [],
+  "tags": []
+}
