@@ -1,0 +1,24 @@
+
+<div class="answer-content">
+    <h2>Answer</h2>
+
+    <p class="answer-text">{{ answer }}</p>
+
+    {% if citations %}
+        <section class="citations" aria-labelledby="citations-heading">
+            <h3 id="citations-heading">Supporting policy sources</h3>
+
+            {% for citation in citations %}
+                <article class="citation">
+                    <h4>{{ citation.source }}</h4>
+                    <p class="chunk-id">Chunk ID: {{ citation.chunk_id }}</p>
+                    <blockquote>{{ citation.passage }}</blockquote>
+                </article>
+            {% endfor %}
+        </section>
+    {% else %}
+        <p class="no-citations">
+            No supporting policy citations were returned.
+        </p>
+    {% endif %}
+</div>

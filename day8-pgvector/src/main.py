@@ -2,16 +2,22 @@
 
 import json
 import logging
+import secrets
 from contextvars import ContextVar
 from datetime import UTC, datetime
 from uuid import uuid4
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from jinja2 import select_autoescape
 from pydantic import BaseModel, Field
+from starlette.concurrency import run_in_threadpool
+from starlette.middleware.sessions import SessionMiddleware
 
-from src.config import get_settings
+from src.config import PROJECT_ROOT, get_settings
 from src.database import check_connection
 from src.rag_service import ask
 
@@ -60,6 +66,11 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 settings = get_settings()
+if not settings.session_secret:
+    if settings.environment == "production":
+        raise RuntimeError("A secure SESSION_SECRET must be configured in production.")
+
+    settings.session_secret = secrets.token_urlsafe(48)
 
 app = FastAPI(
     title="HR Policy RAG API",
@@ -68,6 +79,37 @@ app = FastAPI(
     docs_url="/docs" if settings.docs_enabled else None,
     redoc_url="/redoc" if settings.docs_enabled else None,
 )
+
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=settings.session_secret,
+    session_cookie="hr_policy_session",
+    max_age=3600,
+    same_site="lax",
+    https_only=settings.environment == "production",
+)
+
+
+def add_security_headers(response):
+    """Add browser security headers to every response."""
+
+    response.headers["Content-Security-Policy"] = (
+        "default-src 'self'; "
+        "script-src 'self' https://unpkg.com; "
+        "style-src 'self'; "
+        "img-src 'self' data:; "
+        "object-src 'none'; "
+        "base-uri 'self'; "
+        "frame-ancestors 'none'; "
+        "form-action 'self'"
+    )
+
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
+
+    return response
 
 
 @app.middleware("http")
@@ -85,6 +127,7 @@ async def request_logging_middleware(request: Request, call_next):
 
         response = await call_next(request)
         response.headers["X-Request-ID"] = request_id
+        add_security_headers(response)
 
         logger.info(
             "Request completed with status %s",
@@ -104,10 +147,27 @@ async def request_logging_middleware(request: Request, call_next):
             },
         )
         response.headers["X-Request-ID"] = request_id
+        add_security_headers(response)
         return response
 
     finally:
         request_id_context.reset(token)
+
+
+templates = Jinja2Templates(
+    directory=str(PROJECT_ROOT / "templates"),
+)
+
+templates.env.autoescape = select_autoescape(
+    enabled_extensions=("html", "htm", "xml"),
+    default_for_string=True,
+)
+
+app.mount(
+    "/static",
+    StaticFiles(directory=str(PROJECT_ROOT / "static")),
+    name="static",
+)
 
 
 class AskRequest(BaseModel):
@@ -124,6 +184,101 @@ class AskResponse(BaseModel):
 
     answer: str
     citations: list[dict]
+
+
+@app.get("/ui", response_class=HTMLResponse)
+async def knowledge_assistant(request: Request):
+    """Render the Knowledge Assistant browser page."""
+
+    csrf_token = request.session.get("csrf_token")
+
+    if not csrf_token:
+        csrf_token = secrets.token_urlsafe(32)
+        request.session["csrf_token"] = csrf_token
+
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context={"csrf_token": csrf_token},
+    )
+
+
+@app.post("/ui/ask", response_class=HTMLResponse)
+async def ask_from_ui(request: Request):
+    """Process an HTMX question and return an HTML answer fragment."""
+
+    form = await request.form()
+
+    submitted_token = str(form.get("csrf_token", ""))
+    expected_token = request.session.get("csrf_token", "")
+
+    if (
+        not expected_token
+        or not submitted_token
+        or not secrets.compare_digest(submitted_token, expected_token)
+    ):
+        return templates.TemplateResponse(
+            request=request,
+            name="partials/error.html",
+            context={
+                "message": "Your session could not be verified. Refresh the page and try again."
+            },
+            status_code=403,
+        )
+
+    question = str(form.get("question", "")).strip()
+
+    if not question:
+        return templates.TemplateResponse(
+            request=request,
+            name="partials/error.html",
+            context={"message": "Please enter a question before submitting."},
+        )
+
+    if len(question) > 2000:
+        return templates.TemplateResponse(
+            request=request,
+            name="partials/error.html",
+            context={
+                "message": "Your question is too long. Please keep it within 2,000 characters."
+            },
+        )
+
+    try:
+        result = await run_in_threadpool(
+            ask,
+            question=question,
+            tenant_id="tenant_a",
+            user_roles=["Employee"],
+            limit=5,
+        )
+
+    except ValueError as exc:
+        return templates.TemplateResponse(
+            request=request,
+            name="partials/error.html",
+            context={"message": str(exc)},
+        )
+
+    except Exception:
+        logger.exception("Knowledge Assistant UI request failed")
+
+        return templates.TemplateResponse(
+            request=request,
+            name="partials/error.html",
+            context={
+                "message": "The assistant could not complete your request. Please try again."
+            },
+        )
+
+    return templates.TemplateResponse(
+        request=request,
+        name="partials/answer.html",
+        context={
+            "answer": result.get("answer", ""),
+            "citations": result.get("citations", []),
+        },
+    )
 
 
 @app.exception_handler(RequestValidationError)
