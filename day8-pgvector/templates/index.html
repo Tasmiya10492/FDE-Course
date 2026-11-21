@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ask questions about HR policies and review supporting sources.">
+    <title>Knowledge Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://unpkg.com/htmx.org@2.0.4" defer></script>
+    <script src="/static/ui.js" defer></script>
+
+</head>
+<body>
+    <main class="container">
+        <header class="page-header">
+            <p class="eyebrow">HR POLICY KNOWLEDGE BASE</p>
+            <h1>Knowledge Assistant</h1>
+            <p class="intro">
+                Ask a question about HR policies.
+                Answers are based on available policy documents.
+            </p>
+        </header>
+
+        <section class="question-panel" aria-labelledby="question-heading">
+            <h2 id="question-heading">Ask a question</h2>
+
+            <form
+                hx-post="/ui/ask"
+                hx-target="#answer"
+                hx-swap="innerHTML"
+                hx-indicator="#loading"
+            >
+                <input
+                    type="hidden"
+                    name="csrf_token"
+                    value="{{ csrf_token }}"
+                >
+
+                <label for="question">Your HR policy question</label>
+                <textarea
+                    id="question"
+                    name="question"
+                    rows="4"
+                    maxlength="2000"
+                    required
+                    placeholder="For example: How many days of annual leave are available?"
+                ></textarea>
+
+                <button type="submit">Ask question</button>
+
+                <p id="loading" class="loading" role="status" aria-live="polite">
+                    Searching policy documents and preparing an answer...
+                </p>
+            </form>
+        </section>
+
+        <section
+            id="answer"
+            class="answer-panel"
+            aria-label="Answer and supporting citations"
+            aria-live="polite"
+            aria-atomic="true"
+        >
+            <p class="empty-state">
+                Your answer and supporting policy citations will appear here.
+            </p>
+        </section>
+
+        <footer>
+            <p>Knowledge Assistant · HR Policy Information</p>
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,155 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f6f9;
+    color: #202938;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: min(900px, 92%);
+    margin: 40px auto;
+}
+
+.page-header {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    color: #315b91;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+}
+
+h1 {
+    margin: 8px 0;
+    font-size: 2.2rem;
+}
+
+.intro {
+    color: #485568;
+}
+
+.question-panel,
+.answer-panel {
+    margin-bottom: 24px;
+    padding: 24px;
+    border: 1px solid #d5dce5;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #78879a;
+    border-radius: 6px;
+    color: #202938;
+    font: inherit;
+    resize: vertical;
+}
+
+button {
+    margin-top: 16px;
+    padding: 11px 20px;
+    border: 0;
+    border-radius: 6px;
+    background: #174f91;
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #103d72;
+}
+
+button:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #e09b25;
+    outline-offset: 3px;
+}
+
+.loading {
+    display: none;
+    color: #34445b;
+}
+
+.loading.htmx-request {
+    display: block;
+}
+
+.answer-text {
+    white-space: pre-wrap;
+}
+
+.citation {
+    margin-top: 16px;
+    padding: 16px;
+    border-left: 4px solid #315b91;
+    background: #f4f6f9;
+}
+
+.citation blockquote {
+    margin: 8px 0 0;
+    color: #34445b;
+    white-space: pre-wrap;
+}
+
+.chunk-id,
+.empty-state,
+.no-citations {
+    color: #485568;
+}
+
+footer {
+    margin-top: 36px;
+    color: #485568;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .question-panel,
+    .answer-panel {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
+
+.error-message {
+    padding: 16px;
+    border-left: 4px solid #a32626;
+    background: #fff1f1;
+    color: #681b1b;
+    border-radius: 6px;
+}
+
+.error-message h2 {
+    margin-top: 0;
+    font-size: 1.15rem;
+}
+
+.error-message p:last-child {
+    margin-bottom: 0;
+}

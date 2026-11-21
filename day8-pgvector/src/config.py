@@ -21,6 +21,8 @@ class Settings(BaseSettings):
 
     # Required: application cannot start without a database connection.
     database_url: str
+    # Secret used to sign browser session cookies.
+    session_secret: str = ""
 
     # Optional settings with sensible defaults.
     ollama_host: str = "http://localhost:11434"
