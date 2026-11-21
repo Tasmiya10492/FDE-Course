@@ -1,0 +1,36 @@
+# Run Langflow in a container (official page: https://docs.langflow.org/deployment-docker).
+# Configure the values in the local .env file using .env.example.
+#   1.13.3   a released, patched version. Read the security advisories first:
+#                          https://github.com/langflow-ai/langflow/security/advisories
+#                          The official page shows a pinned example tag and also uses "latest";
+#                          we always pin an exact tag (Playbook ORCH-13).
+#
+# Start:  docker compose up -d       Logs:  docker compose logs -f langflow
+# Stop:   docker compose down        (add -v ONLY if you want to delete the data volume)
+#
+# The repository also ships a larger example with PostgreSQL (docker_example/docker-compose.yml).
+# For learning, this single-container version is enough.
+services:
+  langflow:
+    image: langflowai/langflow:1.13.3
+    restart: unless-stopped
+    # Only this computer can reach it. Never publish it to all addresses (ORCH-08).
+    ports:
+      - "127.0.0.1:7860:7860"
+    environment:
+      # Keep login on. The official images already default to false; we say it again on purpose.
+      LANGFLOW_AUTO_LOGIN: "false"
+      LANGFLOW_SUPERUSER: ${LANGFLOW_SUPERUSER}
+      LANGFLOW_SUPERUSER_PASSWORD: ${LANGFLOW_SUPERUSER_PASSWORD}
+      LANGFLOW_COMPONENTS_PATH: /app/custom_components
+      EMPLOYEE_API_KEY: ${EMPLOYEE_API_KEY}
+      # Where Langflow keeps its data inside the container (matches the volume below).
+      LANGFLOW_CONFIG_DIR: /app/langflow
+    volumes:
+      - langflow_data:/app/langflow
+      - ./custom_components:/app/custom_components:ro
+    mem_limit: 2g
+    security_opt: ["no-new-privileges:true"]
+
+volumes:
+  langflow_data:

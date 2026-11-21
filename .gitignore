@@ -14,3 +14,13 @@ __pycache__/
 
 # Ruff cache
 .ruff_cache/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
