@@ -43,11 +43,11 @@ def test_other_tenant_cannot_access_unshared_documents() -> None:
 
 
 def test_missing_required_role_denies_access() -> None:
-    """Verify that a user missing a required role gets no results."""
+    """Verify that a user without a matching role gets no results."""
     results = search_similar(
         question="What are the annual leave eligibility requirements?",
         tenant_id="tenant_a",
-        user_roles=["HR"],
+        user_roles=["Manager"],
     )
 
     assert results == []

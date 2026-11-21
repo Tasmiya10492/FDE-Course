@@ -1,0 +1,116 @@
+[
+  {
+    "question": "How many days of annual leave does a full-time employee get?",
+    "user_role": "employee",
+    "expect": "answer",
+    "expected_doc_ids": [
+      "8011",
+      "8013"
+    ]
+  },
+  {
+    "question": "How far ahead must long leave be requested?",
+    "user_role": "employee",
+    "expect": "answer",
+    "expected_doc_ids": [
+      "8021",
+      "8023"
+    ]
+  },
+  {
+    "question": "How many days may be carried over?",
+    "user_role": "employee",
+    "expect": "answer",
+    "expected_doc_ids": [
+      "8031",
+      "8033"
+    ]
+  },
+  {
+    "question": "By when must sickness be reported?",
+    "user_role": "employee",
+    "expect": "answer",
+    "expected_doc_ids": [
+      "8041",
+      "8043"
+    ]
+  },
+  {
+    "question": "How fast must a manager answer a leave request?",
+    "user_role": "employee",
+    "expect": "answer",
+    "expected_doc_ids": [
+      "8051",
+      "8053"
+    ]
+  },
+  {
+    "question": "Who may see disciplinary records?",
+    "user_role": "HR administrator",
+    "expect": "answer",
+    "expected_doc_ids": [
+      "8061",
+      "8063"
+    ]
+  },
+  {
+    "question": "How long is parental leave?",
+    "user_role": "employee",
+    "expect": "answer",
+    "expected_doc_ids": [
+      "8071",
+      "8073"
+    ]
+  },
+  {
+    "question": "Are public holidays counted against annual leave?",
+    "user_role": "employee",
+    "expect": "answer",
+    "expected_doc_ids": [
+      "8081",
+      "8083"
+    ]
+  },
+  {
+    "question": "Who may see disciplinary records?",
+    "user_role": "employee",
+    "expect": "refuse",
+    "expected_doc_ids": []
+  },
+  {
+    "question": "What is the director's favourite colour?",
+    "user_role": "employee",
+    "expect": "refuse",
+    "expected_doc_ids": []
+  },
+  {
+    "question": "How many staff went on holiday to Spain last year?",
+    "user_role": "employee",
+    "expect": "refuse",
+    "expected_doc_ids": []
+  },
+  {
+    "question": "What will the weather be like next Tuesday?",
+    "user_role": "employee",
+    "expect": "refuse",
+    "expected_doc_ids": []
+  },
+  {
+    "question": "Which competitor has the best prices?",
+    "user_role": "employee",
+    "expect": "refuse",
+    "expected_doc_ids": []
+  },
+  {
+    "question": "What is the Wi-Fi password in the staff room?",
+    "user_role": "employee",
+    "expect": "refuse",
+    "expected_doc_ids": []
+  },
+  {
+    "question": "Who won the match last night?",
+    "user_role": "employee",
+    "expect": "refuse",
+    "expected_doc_ids": []
+  }
+]

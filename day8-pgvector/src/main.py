@@ -7,13 +7,13 @@ from contextvars import ContextVar
 from datetime import UTC, datetime
 from uuid import uuid4
 
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from jinja2 import select_autoescape
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
@@ -171,11 +171,9 @@ app.mount(
 
 
 class AskRequest(BaseModel):
-    """Request body for the ask endpoint."""
+    model_config = ConfigDict(extra="forbid")
 
     question: str = Field(min_length=1)
-    tenant_id: str = Field(min_length=1)
-    user_roles: list[str] = Field(min_length=1)
     limit: int = Field(default=5, ge=1, le=20)
 
 
@@ -184,6 +182,35 @@ class AskResponse(BaseModel):
 
     answer: str
     citations: list[dict]
+
+
+def get_api_identity(
+    api_key: str | None = Header(default=None, alias="X-API-Key"),
+) -> tuple[str, list[str]]:
+    settings = get_settings()
+
+    employee_key = settings.employee_api_key
+    hr_key = settings.hr_api_key
+
+    # Fail closed if the API credentials are missing or identical.
+    if not employee_key or not hr_key or secrets.compare_digest(employee_key, hr_key):
+        raise HTTPException(
+            status_code=503,
+            detail="API authentication is not configured",
+        )
+
+    provided_key = api_key or ""
+
+    if secrets.compare_digest(provided_key, employee_key):
+        return "main", ["employee"]
+
+    if secrets.compare_digest(provided_key, hr_key):
+        return "main", ["HR administrator"]
+
+    raise HTTPException(
+        status_code=401,
+        detail="Invalid or missing API key",
+    )
 
 
 @app.get("/ui", response_class=HTMLResponse)
@@ -343,13 +370,17 @@ def health():
 
 
 @app.post("/ask", response_model=AskResponse)
-def ask_policy_question(request: AskRequest):
-    """Answer an HR policy question using the existing RAG service."""
+def ask_policy_question(
+    request: AskRequest,
+    identity: tuple[str, list[str]] = Depends(get_api_identity),
+):
+    tenant_id, user_roles = identity
+
     try:
         result = ask(
             question=request.question,
-            tenant_id=request.tenant_id,
-            user_roles=request.user_roles,
+            tenant_id=tenant_id,
+            user_roles=user_roles,
             limit=request.limit,
         )
         return result

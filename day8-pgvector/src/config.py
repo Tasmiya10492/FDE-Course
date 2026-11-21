@@ -24,6 +24,10 @@ class Settings(BaseSettings):
     # Secret used to sign browser session cookies.
     session_secret: str = ""
 
+    # API keys for trusted machine-to-machine callers.
+    employee_api_key: str = ""
+    hr_api_key: str = ""
+
     # Optional settings with sensible defaults.
     ollama_host: str = "http://localhost:11434"
     ollama_model: str = "nomic-embed-text:latest"

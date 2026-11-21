@@ -12,9 +12,14 @@ Cross-tenant access is denied by default. Access to another tenant's document is
 
 Each document contains an `allowed_roles` field.
 
-A user must possess all roles specified in the document's allowed_roles field to access it.
+A user must possess at least one role specified in the document's
+`allowed_roles` field to access it.
 
-Role matching uses an AND condition.
+Role matching uses an OR condition.
+
+For example, a document with `allowed_roles` containing
+`employee`, `line manager`, and `HR administrator` is available
+to any user possessing at least one of those roles.
 
 ## 3. Missing Permissions
 
