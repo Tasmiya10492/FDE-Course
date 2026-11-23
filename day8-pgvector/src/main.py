@@ -17,9 +17,11 @@ from pydantic import BaseModel, ConfigDict, Field
 from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
+from src.auth_routes import router as auth_router
 from src.config import PROJECT_ROOT, get_settings
 from src.database import check_connection
 from src.rag_service import ask
+from src.record_routes import router as record_router
 
 request_id_context: ContextVar[str] = ContextVar(
     "request_id",
@@ -88,6 +90,9 @@ app.add_middleware(
     same_site="lax",
     https_only=settings.environment == "production",
 )
+
+app.include_router(auth_router)
+app.include_router(record_router)
 
 
 def add_security_headers(response):
