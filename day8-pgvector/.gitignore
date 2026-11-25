@@ -9,3 +9,6 @@ __pycache__/
 htmlcov/
 *.egg-info/
 results/
+
+# User-uploaded documents (never commit uploaded content).
+/data/uploads/

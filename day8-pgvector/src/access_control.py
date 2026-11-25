@@ -19,6 +19,7 @@ ROLE_PERMISSIONS = {
         "records:create",
         "records:read_own",
         "records:read_any",
+        "documents:upload",
     },
 }
 

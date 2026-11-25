@@ -164,9 +164,15 @@ def login(payload: Credentials, request: Request):
         ).fetchone()
 
         if attempt and attempt[0] and attempt[0] > datetime.now(UTC):
+            remaining_seconds = max(
+                1,
+                int((attempt[0] - datetime.now(UTC)).total_seconds()) + 1,
+            )
+
             raise HTTPException(
                 status_code=429,
                 detail="Too many login attempts. Try again later.",
+                headers={"Retry-After": str(remaining_seconds)},
             )
 
         user = connection.execute(

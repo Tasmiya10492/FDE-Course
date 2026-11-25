@@ -54,3 +54,48 @@ def test_custom_ollama_settings(monkeypatch):
     assert settings.ollama_chat_model == "custom-model"
     assert settings.environment == "test"
     assert settings.docs_enabled is False
+
+
+def test_cors_origins_parsed_correctly():
+    settings = Settings(
+        _env_file=None,
+        database_url="postgresql://test:test@localhost:5433/testdb",
+        cors_allowed_origins=(" https://portal.example.com/ , http://localhost:3000 "),
+    )
+
+    assert settings.cors_origins == [
+        "https://portal.example.com",
+        "http://localhost:3000",
+    ]
+
+
+def test_empty_cors_origins_returns_empty_list():
+    settings = Settings(
+        _env_file=None,
+        database_url="postgresql://test:test@localhost:5433/testdb",
+        cors_allowed_origins="",
+    )
+
+    assert settings.cors_origins == []
+
+
+@pytest.mark.parametrize(
+    "origin",
+    [
+        "not-a-valid-origin",
+        "ftp://portal.example.com",
+        "https://portal.example.com/path",
+        "https://portal.example.com?query=1",
+        "https://user:password@portal.example.com",
+        "*",
+    ],
+)
+def test_invalid_cors_origins_are_rejected(origin):
+    settings = Settings(
+        _env_file=None,
+        database_url="postgresql://test:test@localhost:5433/testdb",
+        cors_allowed_origins=origin,
+    )
+
+    with pytest.raises(ValueError, match="Invalid CORS origin"):
+        _ = settings.cors_origins

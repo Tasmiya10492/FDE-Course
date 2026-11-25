@@ -1,0 +1,16 @@
+Day17 Security Header Scan
+==========================
+Environment: development
+Request: GET /ui
+HTTP status: 200
+
+Required security headers:
+PASS - Content-Security-Policy: default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'
+PASS - X-Content-Type-Options: nosniff
+PASS - X-Frame-Options: DENY
+PASS - Referrer-Policy: strict-origin-when-cross-origin
+PASS - Permissions-Policy: camera=(), microphone=(), geolocation=()
+NOT APPLICABLE - Strict-Transport-Security is enabled only in production.
+X-Request-ID: ad9bbfed-1902-4b96-ba38-bc8dd7c9aba5
+
+Overall result: PASS
