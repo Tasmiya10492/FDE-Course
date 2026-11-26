@@ -306,9 +306,33 @@ async def request_logging_middleware(request: Request, call_next):
             request.url.path,
         )
 
+        # The browser UI has no authenticated login flow yet.
+        # Keep it unavailable until proper browser authentication is implemented.
+        if settings.environment == "production" and request.url.path in {
+            "/ui",
+            "/ui/ask",
+        }:
+            response = JSONResponse(
+                status_code=404,
+                content={
+                    "error": {
+                        "code": "NOT_FOUND",
+                        "message": "Not found",
+                    }
+                },
+            )
+            response.headers["X-Request-ID"] = request_id
+            add_security_headers(response)
+
+            logger.info("Request completed with status %s", response.status_code)
+            return response
+
         retry_after = None
 
-        if request.url.path != "/health" and request.method != "OPTIONS":
+        if (
+            request.url.path not in {"/health", "/health/live", "/health/ready"}
+            and request.method != "OPTIONS"
+        ):
             client_ip = request.client.host if request.client else "unknown"
             retry_after = get_rate_limit_retry_after(client_ip)
 
@@ -554,6 +578,26 @@ async def general_exception_handler(request, exc):
             }
         },
     )
+
+
+@app.get("/health/live")
+def health_live():
+    """Check whether the application process is running."""
+    return {"status": "alive"}
+
+
+@app.get("/health/ready")
+def health_ready():
+    """Check whether the application can access its database."""
+    try:
+        check_connection()
+        return {"status": "ready", "database": "connected"}
+    except Exception:
+        logger.exception("Readiness check failed")
+        raise HTTPException(
+            status_code=503,
+            detail="Database is unavailable",
+        ) from None
 
 
 @app.get("/health")

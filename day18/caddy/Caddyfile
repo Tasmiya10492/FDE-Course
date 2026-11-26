@@ -1,0 +1,19 @@
+{
+    admin off
+    http_port 8080
+    https_port 8443
+}
+
+localhost {
+    tls internal
+
+    @agent path /agent /agent/*
+    handle @agent {
+        uri strip_prefix /agent
+        reverse_proxy agent:8000
+    }
+
+    handle {
+        reverse_proxy app:8000
+    }
+}

@@ -52,6 +52,66 @@ def test_health_database_failure():
     assert response.headers.get("X-Request-ID")
 
 
+def test_health_live_without_database():
+    with patch(
+        "src.main.check_connection",
+        side_effect=Exception("Database unavailable"),
+    ) as mock_check:
+        response = client.get("/health/live")
+
+    assert response.status_code == 200
+    assert response.json() == {"status": "alive"}
+    mock_check.assert_not_called()
+    assert response.headers.get("X-Request-ID")
+
+
+def test_health_ready_success():
+    with patch("src.main.check_connection") as mock_check:
+        response = client.get("/health/ready")
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "status": "ready",
+        "database": "connected",
+    }
+    mock_check.assert_called_once()
+    assert response.headers.get("X-Request-ID")
+
+
+def test_health_ready_database_failure():
+    with patch(
+        "src.main.check_connection",
+        side_effect=Exception("Database unavailable"),
+    ):
+        response = client.get("/health/ready")
+
+    assert response.status_code == 503
+    assert response.json()["error"]["message"] == "Database is unavailable"
+    assert "Database unavailable" not in response.text
+    assert response.headers.get("X-Request-ID")
+
+
+def test_production_blocks_browser_ui():
+    with patch("src.main.settings.environment", "production"):
+        response = client.get("/ui")
+
+    assert response.status_code == 404
+    assert response.json()["error"]["code"] == "NOT_FOUND"
+    assert response.headers.get("X-Request-ID")
+
+
+def test_production_blocks_browser_ui_ask():
+    with patch("src.main.settings.environment", "production"):
+        response = client.post(
+            "/ui/ask",
+            data={"question": "What is annual leave?"},
+        )
+
+    assert response.status_code == 404
+    assert response.json()["error"]["code"] == "NOT_FOUND"
+    assert response.headers.get("X-Request-ID")
+
+
 def test_ask_employee_success():
     with (
         patch("src.main.get_settings", return_value=configured_settings()),
