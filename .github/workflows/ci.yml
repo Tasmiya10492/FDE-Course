@@ -1,41 +1,120 @@
-# Third-party GitHub Actions are pinned to verified commit SHAs.
-# Container images are pinned to verified release tags and image digests.
-# This prevents moving tags from silently changing the code used by CI.
+# Third-party GitHub Actions and container images are pinned.
+# This makes CI more predictable and reduces supply-chain risk.
 
 name: ci
-on: [pull_request]
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
 
 permissions:
-  contents: read            # least privilege for the token the workflow receives
+  contents: read
 
 jobs:
   checks:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    # A clean PostgreSQL database for every CI run.
+    services:
+      postgres:
+        image: pgvector/pgvector:pg17@sha256:7d0a41464797aeb9862dfdc0bbf1526b82cfd324cdd8036df19e3545f4a9ccb8
+        env:
+          POSTGRES_USER: raguser
+          POSTGRES_PASSWORD: ci-test-password
+          POSTGRES_DB: fde_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U raguser -d fde_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://raguser:ci-test-password@localhost:5432/fde_test
+      ENVIRONMENT: test
+      OLLAMA_HOST: http://localhost:11434
+      PYTHONPATH: ${{ github.workspace }}/day8-pgvector
+
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
-      - run: uv sync --locked
-      - run: uv run ruff format --check app tests
-      - run: uv run ruff check app tests
-      - run: uv run pyright app tests
-      - run: uv run pytest
-      - run: uv run bandit -r app
-      - run: uv run pip-audit
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
+
+      - name: Install Python 3.14
+        run: uv python install 3.14
+
+      - name: Install project dependencies
+        run: uv sync --project day8-pgvector --locked --all-groups
+
+      # Create the vector extension before creating tables that use VECTOR.
+      - name: Install PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+      - name: Initialize database schema
+        working-directory: day8-pgvector
+        run: |
+          PGPASSWORD=ci-test-password psql "$DATABASE_URL" \
+            -v ON_ERROR_STOP=1 \
+            -c "CREATE EXTENSION IF NOT EXISTS vector;" \
+            -f sql/schema.sql \
+            -f sql/migrations/001_add_document_metadata.sql \
+            -f sql/migrations/002_day16_authentication.sql
+
+      - name: Check formatting
+        working-directory: day8-pgvector
+        run: uv run ruff format --check src tests
+
+      - name: Run Ruff lint
+        working-directory: day8-pgvector
+        run: uv run ruff check src tests
+
+      - name: Run Pyright
+        working-directory: day8-pgvector
+        run: uv run pyright src tests
+
+      - name: Run tests
+        working-directory: day8-pgvector
+        run: uv run pytest -q tests
+
+      - name: Run Bandit security scan
+        working-directory: day8-pgvector
+        run: uv run bandit -r src
+
+      - name: Audit Python dependencies
+        working-directory: day8-pgvector
+        run: uv run pip-audit
 
   secret-scan:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - name: Check out full repository history
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
-      - run: >-
-          docker run --rm -v "${{ github.workspace }}:/repo"
+
+      - name: Scan Git history for secrets
+        run: >-
+          docker run --rm
+          -v "${{ github.workspace }}:/repo"
           ghcr.io/gitleaks/gitleaks:v8.30.1@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
           git --redact --verbose /repo
 
   image:
     needs: checks
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - run: docker build --tag "fde-service:${{ github.sha }}" .
+      - name: Check out repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Build application image
+        run: docker build --tag "fde-service:${{ github.sha }}" .

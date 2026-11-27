@@ -115,7 +115,7 @@ def test_role_endpoint_ownership_matrix():
 
         # 12. Verify both denied attempts were recorded in the audit log.
         with get_connection() as connection:
-            denied_count = connection.execute(
+            denied_result = connection.execute(
                 """
                 SELECT COUNT(*)
                 FROM audit_events
@@ -123,7 +123,10 @@ def test_role_endpoint_ownership_matrix():
                   AND target_id = ANY(%s)
                 """,
                 ([employee_record, manager_record],),
-            ).fetchone()[0]
+            ).fetchone()
+
+            assert denied_result is not None
+            denied_count = denied_result[0]
 
         assert denied_count >= 2
 

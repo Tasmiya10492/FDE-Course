@@ -1,27 +1,21 @@
-# Deployment guide
+# Deployment Guide
 
-> Audience: <who reads this>
+## Prerequisites
+- Docker and Docker Compose
+- Python 3.14 and uv for local development
+- PostgreSQL with pgvector
+- Ollama if running the local model workflow
 
-## Prerequisites.
+## Configuration
+Configure the required database connection and model settings through environment variables or the local `.env` file.
 
-<write here>
+Do not commit `.env` files, passwords, API keys or other secrets.
 
-## The environment variable table: name, required, default, example, meaning.
+## Database
+Initialize the database using `sql/schema.sql`, then apply migrations in order.
 
-<write here>
+## Application
+Use the repository Dockerfile and Compose configuration for the container-based workflow. Verify that the database is healthy and that the application can connect before testing API endpoints.
 
-## Install and start steps (commands you have run).
-
-<write here>
-
-## How to check it works.
-
-<write here>
-
-## Troubleshooting: real error messages, cause, fix.
-
-<write here>
-
-## Update and roll back.
-
-<write here>
+## Verification
+Run the automated tests and health checks after deployment. Review application logs for startup or database errors.

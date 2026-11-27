@@ -3,13 +3,12 @@
 from fastapi.testclient import TestClient
 from src.config import get_settings
 from src.main import app
+from starlette.middleware.cors import CORSMiddleware
 
 
 def test_cors_middleware_is_registered_with_restricted_settings():
     cors = next(
-        middleware
-        for middleware in app.user_middleware
-        if middleware.cls.__name__ == "CORSMiddleware"
+        middleware for middleware in app.user_middleware if middleware.cls is CORSMiddleware
     )
 
     assert cors.kwargs["allow_origins"] == get_settings().cors_origins

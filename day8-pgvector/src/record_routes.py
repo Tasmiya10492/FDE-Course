@@ -53,6 +53,12 @@ def create_record(
             (user["id"], payload.title, payload.content),
         ).fetchone()
 
+        if record is None:
+            raise HTTPException(
+                status_code=500,
+                detail="Record creation did not return the created record",
+            )
+
         connection.execute(
             """
             INSERT INTO audit_events (

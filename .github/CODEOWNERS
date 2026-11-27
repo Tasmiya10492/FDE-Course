@@ -1,6 +1,7 @@
-# CODEOWNERS: GitHub asks these people to review changes to matching files (Playbook VC-17).
-# Replace <GITHUB_REVIEWER> with a GitHub user name or team (for example @your-org/mentors).
-# With a branch protection rule that requires code-owner review, nothing merges without them.
-*                 <GITHUB_REVIEWER>
-/sql/             <GITHUB_REVIEWER>
-/.github/         <GITHUB_REVIEWER>
+# Default code owner for all repository changes.
+* @aryan-10590
+
+# Explicit ownership of security-sensitive files.
+.github/ @aryan-10590
+day8-pgvector/src/auth_routes.py @aryan-10590
+day8-pgvector/src/database.py @aryan-10590

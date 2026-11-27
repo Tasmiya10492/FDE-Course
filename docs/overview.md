@@ -1,19 +1,20 @@
-# Overview
+# Project Overview
 
-> Audience: <who reads this>
+This project is a Retrieval-Augmented Generation (RAG) application for HR policy information.
 
-## Who this is for (audience).
+## Main capabilities
+- Retrieve relevant HR policy chunks from PostgreSQL with pgvector.
+- Generate responses using an Ollama language model.
+- Apply authentication and authorization controls.
+- Record relevant security and audit events.
+- Return an abstention response when the available evidence is insufficient.
 
-<write here>
+## Main application
+The application code is in `day8-pgvector/`.
 
-## What the service does in two sentences.
-
-<write here>
-
-## Who uses it and what they can do.
-
-<write here>
-
-## Main limits and known issues.
-
-<write here>
+## Technology
+- Python and FastAPI
+- PostgreSQL and pgvector
+- Ollama for embeddings and language-model responses
+- Pytest, Ruff and Pyright
+- Docker and GitHub Actions

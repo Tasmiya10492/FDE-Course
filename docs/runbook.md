@@ -1,35 +1,25 @@
-# Runbook
+# Operations Runbook
 
-> Audience: <who reads this>
+## Application unavailable
+1. Check container status.
+2. Inspect application logs.
+3. Verify database health and connectivity.
+4. Verify required environment variables.
+5. Identify the cause before restarting.
 
-## What the system does and who owns it.
+## Database unavailable
+1. Check PostgreSQL container status.
+2. Check database readiness.
+3. Verify connection settings.
+4. Inspect database logs.
+5. Restore from a verified backup if required.
 
-<write here>
+## Failed deployment
+1. Stop further rollout.
+2. Inspect failing health checks and logs.
+3. Keep the last known-good image available.
+4. Roll back using the deployment process.
+5. Record the cause and corrective action.
 
-## Start, stop, restart.
-
-<write here>
-
-## Health checks and what they mean.
-
-<write here>
-
-## Common problems: message, cause, fix.
-
-<write here>
-
-## Rotate secrets.
-
-<write here>
-
-## Back up and restore (date of the last restore test).
-
-<write here>
-
-## Roll back a release.
-
-<write here>
-
-## Who to call and when.
-
-<write here>
+## Security incident
+Preserve relevant logs, restrict affected access, notify the responsible administrator, and follow the organization's incident-response process.

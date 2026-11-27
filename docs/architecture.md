@@ -1,19 +1,18 @@
 # Architecture
 
-> Audience: <who reads this>
+## Request flow
 
-## Components and how they connect (a text diagram, for example Mermaid).
+1. A user sends a request to the FastAPI application.
+2. Authentication identifies the user.
+3. Authorization checks whether the user can access the requested information.
+4. The retrieval service searches permitted document chunks using pgvector.
+5. The application uses retrieved context to prepare an answer.
+6. The response includes supporting sources when available.
+7. If evidence is insufficient, the application abstains instead of inventing an answer.
 
-<write here>
-
-## The data model.
-
-<write here>
-
-## The main flows, step by step.
-
-<write here>
-
-## Security controls and where each is enforced.
-
-<write here>
+## Main components
+- `src/`: application code and API routes.
+- `sql/`: database schema and migrations.
+- `tests/`: automated tests.
+- PostgreSQL: application data and vector storage.
+- Ollama: embedding and language-model services.

@@ -61,7 +61,7 @@ def ask(
     )
 
     # Step 2: Remove chunks whose similarity distance is too high.
-    relevant_chunks = [result for result in results if result["distance"] <= MAX_DISTANCE]
+    relevant_chunks = [result for result in results if float(result["distance"]) <= MAX_DISTANCE]
 
     # Step 3: Keep only chunks that fit within the context budget.
     relevant_chunks = _select_chunks_within_budget(

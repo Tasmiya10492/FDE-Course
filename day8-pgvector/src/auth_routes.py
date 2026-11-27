@@ -136,6 +136,12 @@ def register(payload: Credentials, request: Request):
             detail="An account with this email already exists",
         ) from None
 
+    if user is None:
+        raise HTTPException(
+            status_code=500,
+            detail="User registration did not return the created account",
+        )
+
     write_audit_event(
         "registration_success",
         request,
@@ -152,6 +158,8 @@ def login(payload: Credentials, request: Request):
     """Authenticate credentials and create a server-side session."""
     email = normalize_email(payload.email)
     ip = client_ip(request)
+
+    authenticated_user = None
 
     with get_connection() as connection:
         attempt = connection.execute(
@@ -184,9 +192,7 @@ def login(payload: Credentials, request: Request):
             (email,),
         ).fetchone()
 
-        valid = user is not None and verify_password(payload.password, user[2])
-
-        if not valid:
+        if user is None or not verify_password(payload.password, user[2]):
             connection.execute(
                 """
                 INSERT INTO login_attempts (
@@ -222,7 +228,6 @@ def login(payload: Credentials, request: Request):
                 (email, ip, MAX_LOGIN_ATTEMPTS),
             )
 
-            failed_user_id = None
         else:
             connection.execute(
                 """
@@ -231,9 +236,9 @@ def login(payload: Credentials, request: Request):
                 """,
                 (email, ip),
             )
-            failed_user_id = user[0]
+            authenticated_user = user
 
-    if failed_user_id is None:
+    if authenticated_user is None:
         write_audit_event(
             "login_failure",
             request,
@@ -250,7 +255,7 @@ def login(payload: Credentials, request: Request):
             INSERT INTO user_sessions (session_id, user_id, expires_at)
             VALUES (%s, %s, %s)
             """,
-            (session_id, user[0], expires_at),
+            (session_id, authenticated_user[0], expires_at),
         )
 
     request.session.clear()
@@ -259,14 +264,18 @@ def login(payload: Credentials, request: Request):
     write_audit_event(
         "login_success",
         request,
-        actor_user_id=user[0],
+        actor_user_id=authenticated_user[0],
         target_type="user",
-        target_id=str(user[0]),
+        target_id=str(authenticated_user[0]),
     )
 
     return {
         "message": "Login successful",
-        "user": {"id": str(user[0]), "email": user[1], "role": user[3]},
+        "user": {
+            "id": str(authenticated_user[0]),
+            "email": authenticated_user[1],
+            "role": authenticated_user[3],
+        },
     }
 
 
