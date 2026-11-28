@@ -1,0 +1,397 @@
+Scanning local image tarball "/src/fde-service-day19.tar"
+Starting filesystem walk for root:
+End status: 993 dirs visited, 7948 inodes visited, 6571 Extract calls, 44.429308ms elapsed, 44.429461ms wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 80.944µs elapsed, 81.034µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 81.784µs elapsed, 81.865µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 116.49µs elapsed, 116.575µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 617.165µs elapsed, 617.22µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 554.853µs elapsed, 555.088µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 482.564µs elapsed, 482.606µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 31.631µs elapsed, 31.677µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 9.875µs elapsed, 9.91µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 22.538µs elapsed, 22.574µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 455.503µs elapsed, 455.545µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 29.602µs elapsed, 29.652µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 24.665µs elapsed, 24.708µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 23.722µs elapsed, 23.764µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 10.215µs elapsed, 10.256µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 41.408µs elapsed, 41.449µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 40.5µs elapsed, 40.543µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 24.821µs elapsed, 24.864µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 26.062µs elapsed, 26.103µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 8.989µs elapsed, 9.025µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 15.755µs elapsed, 15.79µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 12.372µs elapsed, 12.413µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 56.093µs elapsed, 56.14µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 73.139µs elapsed, 73.177µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 26.256µs elapsed, 26.305µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 42.264µs elapsed, 42.302µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 242.284µs elapsed, 242.322µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 26.433µs elapsed, 26.475µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 28.123µs elapsed, 28.164µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 27.264µs elapsed, 27.305µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 22.341µs elapsed, 22.383µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 32.57µs elapsed, 32.728µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 47.524µs elapsed, 47.567µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 27.768µs elapsed, 27.816µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 30.631µs elapsed, 30.687µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 15.109µs elapsed, 15.153µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 42.424µs elapsed, 42.474µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 26.293µs elapsed, 26.336µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 9.115µs elapsed, 9.158µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 26.868µs elapsed, 26.906µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 14.465µs elapsed, 14.497µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 11.122µs elapsed, 11.158µs wall time
+Starting filesystem walk for root:
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 11.591µs elapsed, 11.636µs wall time
+
+Container Scanning Result (Debian GNU/Linux 13 (trixie)) (Based on "python" image):
+Total 17 packages affected by 75 known vulnerabilities (0 Critical, 35 High, 33 Medium, 5 Low, 2 Unknown) from 1 ecosystem.
+0 vulnerabilities can be fixed.
+
+Container image information:
+  OS version: Debian GNU/Linux 13 (trixie)
+  Base Image 2 (debian):
+    Layer 0  # debian.sh --arch 'amd64' out/ 'trixie' '@1795392000' (72 vulns)
+  Base Image 1 (python):
+    Layer 1  ENV PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    Layer 2  ENV LANG=C.UTF-8
+    Layer 3  RUN /bin/sh -c set -eux; apt-get update; apt-get install -y --no-install-recommends ca-certificates...
+    Layer 4  ENV PYTHON_VERSION=3.14.10
+    Layer 5  ENV PYTHON_SHA256=de414a57119abef52784d8993e341d53aed635fc2b05c2607d9f98a2c5b72032
+    Layer 6  RUN /bin/sh -c set -eux; savedAptMark="$(apt-mark showmanual)"; apt-get update; apt-get install -y... (2 vulns)
+    Layer 7  RUN /bin/sh -c set -eux; for src in idle3 pip3 pydoc3 python3 python3-config; do dst="$(echo "$src"...
+    Layer 8  CMD ["python3"]
+  Your Image:
+    Layer 9  RUN /bin/sh -c apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/* # buildkit (1 vulns)
+    Layer 10 RUN /bin/sh -c useradd --create-home --uid 1000 --shell /usr/sbin/nologin appuser # buildkit
+    Layer 11 WORKDIR /app
+    Layer 12 COPY --chown=appuser:appuser /app/.venv /app/.venv # buildkit
+    Layer 13 COPY --chown=appuser:appuser day8-pgvector/src ./src # buildkit
+    Layer 14 COPY --chown=appuser:appuser day8-pgvector/templates ./templates # buildkit
+    Layer 15 COPY --chown=appuser:appuser day8-pgvector/static ./static # buildkit
+    Layer 16 COPY --chown=appuser:appuser day8-pgvector/data ./data # buildkit
+    Layer 17 ENV PATH=/app/.venv/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin...
+    Layer 18 USER appuser
+    Layer 19 EXPOSE 8000/tcp
+    Layer 20 HEALTHCHECK {Test:[CMD-SHELL python -c "import urllib.request;...
+    Layer 21 CMD ["uvicorn" "src.main:app" "--host" "0.0.0.0" "--port" "8000"]
+
+Debian:13
+
+os:/var/lib/dpkg/status: found 17 packages with issues
+
+  acl@2.3.2-2+b1 (binary package: libacl1) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-54369: acl before version 2.4.0 contains a symlink traversal vulnerability in the...
+      Severity: '8.4'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-54370: acl before version 2.4.0 contains a time-of-check to time-of-use (TOCTOU) race...
+      Severity: '7.2'; Minimal Fix Version: 'No fix available';
+  attr@1:2.5.2-3 (binary package: libattr1) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-54371: attr before version 2.6.0 contains a symlink traversal vulnerability in the...
+      Severity: '8.4'; Minimal Fix Version: 'No fix available';
+  bzip2@1.0.8-6 (binary package: libbz2-1.0) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-42250: bzip2 contains an off‑by‑one error in the bzip2recover utility. When processing...
+      Severity: '4.8'; Minimal Fix Version: 'No fix available';
+  dpkg@1.22.22 has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-91094: A directory traversal bug was discovered when unpacking 3.0 (quilt) source...
+      Severity: '5.5'; Minimal Fix Version: 'No fix available';
+  gcc-14@14.2.0-19 (binary packages: gcc-14-base, libgcc-s1, libstdc++6) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-102010: A flaw was found in GCC. When an application calls the erase_if function on a...
+      Severity: '7.0'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-114690: A flaw was found in GCC. An out-of-bounds memory access vulnerability exists in...
+      Severity: '6.2'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-114691: A flaw was found in the libstdc++ component of GCC. An attacker who can provide...
+      Severity: '5.9'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-115455: A flaw was found in GCC libstdc++. When an application extracts data into a...
+      Severity: '6.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-115456: A flaw was found in gcc. An attacker could cause a Denial of Service (DoS) by...
+      Severity: '3.7'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-125709: A flaw was found in libstdc++. When a byte-by-byte write operation fails during...
+      Severity: '4.2'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-95619: A flaw was found in libstdc++. An integer overflow can occur when processing...
+      Severity: '7.7'; Minimal Fix Version: 'No fix available';
+  glibc@2.41-12+deb13u5 (binary packages: libc-bin, libc6) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-100290: The regcomp and regexec functions in the GNU C Library version 2.3 to version...
+      Severity: '3.7'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-115819: Calling the wide scanf family of functions (swscanf, fwscanf, wscanf, vswscanf,...
+      Severity: '4.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-121757: Converting crafted CP949 input to UTF-8 character encoding and ignoring invalid...
+      Severity: '5.9'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-121758: Converting crafted ISO-2022-CN-EXT input in the GNU C Library version 2.2...
+      Severity: '5.9'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-124024: Converting crafted input from UCS-4 to IBM1390 or IBM1399 character encoding,...
+      Severity: '5.9'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-126765: The glob functions in the GNU C Library versions 2.44 and earlier may free the...
+      Severity: '3.7'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-84243: The gettext family of functions in the GNU C Library version 2.0 and later...
+      Severity: '7.0'; Minimal Fix Version: 'No fix available';
+  ncurses@6.5+20250216-2 (binary packages: libncursesw6, libtinfo6, ncurses-base, ncurses-bin) has the following known vulnerabilities:
+    introduced in # 6 Layer (python)
+    DEBIAN-CVE-2025-6141: A vulnerability has been found in GNU ncurses up to 6.5-20250322 and classified...
+      Severity: '4.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2025-69720: The infocmp command-line tool in ncurses before 6.5-20251213 has a stack-based...
+      Severity: '7.8'; Minimal Fix Version: 'No fix available';
+  openssl@3.5.9-1~deb13u1 (binary packages: libssl3t64, openssl, openssl-provider-legacy) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-107493: Issue summary: When an application passes a stack to...
+      Severity: '7.7'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-107494: Issue summary: The QUIC stack queues a RETIRE_CONNECTION_ID frame also for...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-107496: Issue summary: Encrypting a CMS message to an EC certificate whose group order...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-121481: Issue summary: Calling EVP_EncodeBlock() with an input length close to INT_MAX...
+      Severity: '5.9'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-121482: Issue summary: Verifying a maliciously crafted CMS or PKCS#7 SignedData message...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-124709: Issue summary: A QUIC server that rejects a stream opened by the peer may...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-35190: Issue summary: A server configured with the Suite B certificate flag through...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-84785: Issue summary: A QUIC peer that sends many small out-of-order STREAM fragments...
+      Severity: 'N/A'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-84786: Issue summary: A DANE-enabled TLS client may crash by dereferencing a NULL...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-88822: Issue summary: QUIC, when performing automated peer detection, may allow...
+      Severity: '6.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-88823: Issue summary: The AES-GCM-SIV implementation treats a zero-length Additional...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-95690: Issue summary: Receiving crafted out-of-sequence DTLS handshake fragments may...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-95691: Issue summary: A retransmitted QUIC CRYPTO frame can release packet storage...
+      Severity: '8.1'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-95692: Issue summary: Setting an AES-GCM-SIV IV shorter than the expected nonce length...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+  pam@1.7.0-5 (binary packages: libpam-modules, libpam-modules-bin, libpam-runtime, libpam0g) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2025-8941: A flaw was found in linux-pam. The pam_namespace module may improperly handle...
+      Severity: '7.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-54411: Linux-PAM through 1.7.2 contains an observable timing discrepancy (CWE-208) in...
+      Severity: '6.9'; Minimal Fix Version: 'No fix available';
+  perl@5.40.1-6+deb13u1 (binary package: perl-base) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-15534: Perl versions through 5.45.1 have out-of-bounds heap reads and writes during...
+      Severity: '5.7'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-40558: (no details available)
+      Severity: 'N/A'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-82560: Pod::Text versions before 6.1.1 for Perl allow CPU and memory exhaustion...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-9538: Archive::Tar versions before 3.10 for Perl allow memory exhaustion via attacker...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+  shadow@1:4.17.4-2+deb13u1 (binary packages: login.defs, passwd) has the following known vulnerabilities:
+    introduced in # 9 Layer
+    DEBIAN-CVE-2024-56433: shadow-utils (aka shadow) 4.4 through 4.17.0 establishes a default /etc/subuid...
+      Severity: '3.6'; Minimal Fix Version: 'No fix available';
+  sqlite3@3.46.1-7+deb13u2 (binary package: libsqlite3-0) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-119371: SQLite before 3.54.0 contains a stack exhaustion vulnerability that allows...
+      Severity: '6.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119372: SQLite before 3.54.0 built with FTS3/FTS4 and SQLITE_ENABLE_FTS3_PARENTHESIS...
+      Severity: '6.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119373: SQLite before 3.54.0 built with FTS5 contains a heap buffer overflow in...
+      Severity: '8.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119374: SQLite before 3.54.0 built with FTS5 contains a heap buffer overflow in...
+      Severity: '8.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119375: SQLite before 3.54.0 contains an information disclosure vulnerability that...
+      Severity: '6.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119376: SQLite before 3.54.0 contains a stack exhaustion vulnerability that allows...
+      Severity: '6.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119377: SQLite before 3.54.0 contains an authorization bypass vulnerability in...
+      Severity: '3.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119378: SQLite before 3.54.0 contains a use-after-free vulnerability in the R-Tree...
+      Severity: '6.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119379: SQLite before 3.54.0 built with the session extension contains a heap buffer...
+      Severity: '8.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119586: SQLite command-line shell through 3.54.1 contains a command injection...
+      Severity: '8.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-119591: SQLite before 3.54.0 contains a stack exhaustion vulnerability in...
+      Severity: '6.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-50812: A NULL pointer dereference in the SQLite Session Extension in SQLite 3.53.1 and...
+      Severity: '5.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-50813: An issue in SQLite before Fossil check-in 869a51ae84df allows a local attacker...
+      Severity: '6.1'; Minimal Fix Version: 'No fix available';
+  systemd@257.13-1~deb13u1 (binary packages: libsystemd0, libudev1) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-15059: Local unprivileged users can terminate arbitrary local processes via a...
+      Severity: '5.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-16742: systemd-homed contains a local privilege escalation bug via arbitrary system...
+      Severity: '6.7'; Minimal Fix Version: 'No fix available';
+  tar@1.35+dfsg-3.1 has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-18477: A TOCTOU (Time-of-Check Time-of-Use) vulnerability in GNU tar's incremental...
+      Severity: '4.4'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-18508: A flaw was found in GNU tar. When extracting an archive with the...
+      Severity: '4.4'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-5704: A flaw was found in tar. A remote attacker could exploit this vulnerability by...
+      Severity: '5.5'; Minimal Fix Version: 'No fix available';
+  util-linux@1:2.41.5-0+deb13u1 (binary package: bsdutils) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-3184: A flaw was found in util-linux. Improper hostname canonicalization in the...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-76642: util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit...
+      Severity: '8.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-78408: The nsenter --join-cgroup option opens the target cgroup.procs file as root and...
+      Severity: '7.9'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-78409: The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and...
+      Severity: '7.0'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-78410: A flaw was found in util-linux. Restricted bind mounts take the source path...
+      Severity: '7.8'; Minimal Fix Version: 'No fix available';
+  util-linux@1:4.16.0-2+really2.41.5-0+deb13u1 (binary package: login) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-3184: A flaw was found in util-linux. Improper hostname canonicalization in the...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-76642: util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit...
+      Severity: '8.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-78408: The nsenter --join-cgroup option opens the target cgroup.procs file as root and...
+      Severity: '7.9'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-78409: The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and...
+      Severity: '7.0'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-78410: A flaw was found in util-linux. Restricted bind mounts take the source path...
+      Severity: '7.8'; Minimal Fix Version: 'No fix available';
+  util-linux@2.41.5-0+deb13u1 (binary packages: libblkid1, liblastlog2-2, libmount1, libsmartcols1, libuuid1, mount, util-linux) has the following known vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-3184: A flaw was found in util-linux. Improper hostname canonicalization in the...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-76642: util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit...
+      Severity: '8.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-78408: The nsenter --join-cgroup option opens the target cgroup.procs file as root and...
+      Severity: '7.9'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-78409: The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and...
+      Severity: '7.0'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-78410: A flaw was found in util-linux. Restricted bind mounts take the source path...
+      Severity: '7.8'; Minimal Fix Version: 'No fix available';
+
+  75 known vulnerabilities found in os:/var/lib/dpkg/status
+
+  apt@3.0.4 (binary packages: apt, libapt-pkg7.0) has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2011-3374: It was found that apt-key in apt, all versions, do not correctly validate gpg...
+      Severity: '3.7'; Minimal Fix Version: 'No fix available';
+  coreutils@9.7-3 has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2017-18018: In GNU Coreutils through 8.29, chown-core.c in chown and chgrp does not prevent...
+      Severity: '4.7'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2025-5278: A flaw was found in GNU Coreutils. The sort utility's begfield() function is...
+      Severity: '4.4'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-56391: GNU coreutils uniq is vulnerable to an out‑of‑bounds read due to incorrect...
+      Severity: '6.1'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-56392: GNU coreutils unexpand is vulnerable to a heap-based buffer overflow due to an...
+      Severity: '6.1'; Minimal Fix Version: 'No fix available';
+  dash@0.5.12-12 has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-102473: A flaw was found in dash. When built without libc fnmatch, the internal...
+      Severity: '5.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2026-102474: A flaw was found in dash. The printf builtin reserves four bytes before...
+      Severity: '4.0'; Minimal Fix Version: 'No fix available';
+  diffutils@1:3.10-4 has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-53910: diff3 tool from GNU diffutils is vulnerable to a heap‑based buffer overflow due...
+      Severity: '2.1'; Minimal Fix Version: 'No fix available';
+  glibc@2.41-12+deb13u5 (binary packages: libc-bin, libc6) has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2010-4756: The glob implementation in the GNU C Library (aka glibc or libc6) allows remote...
+      Severity: 'N/A'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2018-20796: In the GNU C Library (aka glibc or libc6) through 2.29,...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2019-1010022: GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may...
+      Severity: '9.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2019-1010023: GNU Libc current is affected by: Re-mapping current loaded library with...
+      Severity: '8.8'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2019-1010024: GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2019-1010025: GNU Libc current is affected by: Mitigation bypass. The impact is: Attacker may...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2019-9192: In the GNU C Library (aka glibc or libc6) through 2.29,...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+  pam@1.7.0-5 (binary packages: libpam-modules, libpam-modules-bin, libpam-runtime, libpam0g) has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2026-137898: A flaw was found in pam. When built with libeconf and an unconfigured vendor...
+      Severity: '7.3'; Minimal Fix Version: 'No fix available';
+  perl@5.40.1-6+deb13u1 (binary package: perl-base) has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2011-4116: _is_safe in the File::Temp module for Perl does not properly handle symlinks.
+      Severity: '3.3'; Minimal Fix Version: 'No fix available';
+  shadow@1:4.17.4-2+deb13u1 (binary packages: login.defs, passwd) has the following unimportant vulnerabilities:
+    introduced in # 9 Layer
+    DEBIAN-CVE-2007-5686: initscripts in rPath Linux 1 sets insecure permissions for the /var/log/btmp...
+      Severity: 'N/A'; Minimal Fix Version: 'No fix available';
+  sqlite3@3.46.1-7+deb13u2 (binary package: libsqlite3-0) has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2021-45346: A Memory Leak vulnerability exists in SQLite Project SQLite3 3.35.1 and 3.37.0...
+      Severity: '4.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2025-70873: An information disclosure issue in the zipfileInflate function in the zipfile...
+      Severity: '7.5'; Minimal Fix Version: 'No fix available';
+  systemd@257.13-1~deb13u1 (binary packages: libsystemd0, libudev1) has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2013-4392: systemd, when updating file permissions, allows local users to change the...
+      Severity: '5.0'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2023-31437: An issue was discovered in systemd 253. An attacker can modify a sealed log...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2023-31438: An issue was discovered in systemd 253. An attacker can truncate a sealed log...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+    DEBIAN-CVE-2023-31439: An issue was discovered in systemd 253. An attacker can modify the contents of...
+      Severity: '5.3'; Minimal Fix Version: 'No fix available';
+  tar@1.35+dfsg-3.1 has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2005-2541: Tar 1.15.1 does not properly warn the user when extracting setuid or setgid...
+      Severity: 'N/A'; Minimal Fix Version: 'No fix available';
+  util-linux@1:2.41.5-0+deb13u1 (binary package: bsdutils) has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2022-0563: A flaw was found in the util-linux chfn and chsh utilities when compiled with...
+      Severity: '5.5'; Minimal Fix Version: 'No fix available';
+  util-linux@1:4.16.0-2+really2.41.5-0+deb13u1 (binary package: login) has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2022-0563: A flaw was found in the util-linux chfn and chsh utilities when compiled with...
+      Severity: '5.5'; Minimal Fix Version: 'No fix available';
+  util-linux@2.41.5-0+deb13u1 (binary packages: libblkid1, liblastlog2-2, libmount1, libsmartcols1, libuuid1, mount, util-linux) has the following unimportant vulnerabilities:
+    introduced in # 0 Layer (debian)
+    DEBIAN-CVE-2022-0563: A flaw was found in the util-linux chfn and chsh utilities when compiled with...
+      Severity: '5.5'; Minimal Fix Version: 'No fix available';
+
+  28 uncalled/unimportant vulnerabilities found in os:/var/lib/dpkg/status (filtered out)

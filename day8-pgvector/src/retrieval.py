@@ -36,7 +36,7 @@ def search_similar(
                     tenant_id = %s
                     OR %s = ANY(shared_with_tenants)
                 )
-                AND allowed_roles <@ %s::text[]
+                AND allowed_roles && %s::text[]
             ORDER BY embedding <=> %s::vector
             LIMIT %s
             """,

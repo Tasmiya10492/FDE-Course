@@ -61,7 +61,7 @@ def ask(
     )
 
     # Step 2: Remove chunks whose similarity distance is too high.
-    relevant_chunks = [result for result in results if result["distance"] <= MAX_DISTANCE]
+    relevant_chunks = [result for result in results if float(result["distance"]) <= MAX_DISTANCE]
 
     # Step 3: Keep only chunks that fit within the context budget.
     relevant_chunks = _select_chunks_within_budget(
@@ -97,11 +97,24 @@ def ask(
                 "role": "system",
                 "content": (
                     "You are an HR policy assistant. "
-                    "Answer only using the supplied policy passages. "
-                    "Do not invent policies, dates or eligibility rules. "
-                    "If the passages do not answer the question, "
-                    "say that you don't know. "
-                    "Cite supporting sources using their filename and chunk ID."
+                    "Use only the supplied policy passages as evidence. "
+                    "Answer the specific question directly and concisely. "
+                    "Never invent numbers, dates, eligibility rules, exceptions, or entitlements. "
+                    "When a question asks for a specific amount or figure that is not stated, "
+                    "do not refuse the entire question if related policy information "
+                    "is available. "
+                    "Instead, explain the related information that the passages do establish, "
+                    "and clearly state that the requested specific figure is not specified. "
+                    "For annual leave entitlement questions, explain that entitlement is based "
+                    "on employment terms and company policy, and may vary by employee grade, "
+                    "contract type, and length of service, if those facts appear in the passages. "
+                    "Do not assume that all full-time employees receive the same number of days. "
+                    "Do not include unrelated leave types or policy topics. "
+                    "Recommend contacting HR when the passages direct employees to do so. "
+                    "If none of the supplied passages provides useful information, say: "
+                    "'I don't know based on the available HR policy information.' "
+                    "Never append the abstention message after providing a useful partial answer. "
+                    "Do not cite passages that do not support the claim."
                 ),
             },
             {
@@ -119,6 +132,15 @@ def ask(
 
     answer = (response.message.content or "").strip()
 
+    # Remove a redundant abstention sentence if useful information was provided.
+    abstention_text = ABSTENTION_MESSAGE
+    abstention_start = answer.casefold().find(abstention_text.casefold())
+
+    if abstention_start >= 0:
+        answer = (
+            answer[:abstention_start] + answer[abstention_start + len(abstention_text) :]
+        ).strip()
+
     # Step 8: Abstain if the model does not return an answer.
     if not answer:
         return {
@@ -126,10 +148,8 @@ def ask(
             "citations": [],
         }
 
-    # Step 9: Abstain if the model explicitly says it does not know.
-    normalized_answer = answer.casefold()
-
-    if "i don't know" in normalized_answer or "i do not know" in normalized_answer:
+    # Step 9: Abstain only when the entire answer is an abstention.
+    if answer.casefold().strip() == ABSTENTION_MESSAGE.casefold():
         return {
             "answer": ABSTENTION_MESSAGE,
             "citations": [],

@@ -26,6 +26,11 @@ CREATE TABLE IF NOT EXISTS document_chunks (
     source TEXT NOT NULL
         CHECK (BTRIM(source) <> ''),
 
+    document_id TEXT,
+    title TEXT,
+    document_type TEXT,
+    document_updated_at DATE,
+
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
@@ -40,3 +45,7 @@ ON document_chunks USING GIN (allowed_roles);
 -- Index for explicit tenant sharing
 CREATE INDEX IF NOT EXISTS idx_document_chunks_shared_tenants
 ON document_chunks USING GIN (shared_with_tenants);
+
+-- Index for document metadata lookup
+CREATE INDEX IF NOT EXISTS idx_document_chunks_document_id
+ON document_chunks (tenant_id, document_id);

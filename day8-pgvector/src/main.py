@@ -5,21 +5,136 @@ import logging
 import secrets
 from contextvars import ContextVar
 from datetime import UTC, datetime
+from math import ceil
+from threading import Lock
+from time import monotonic
 from uuid import uuid4
 
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from jinja2 import select_autoescape
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 from starlette.concurrency import run_in_threadpool
 from starlette.middleware.sessions import SessionMiddleware
 
+from src.auth_routes import router as auth_router
 from src.config import PROJECT_ROOT, get_settings
 from src.database import check_connection
 from src.rag_service import ask
+from src.record_routes import router as record_router
+from src.upload_routes import router as upload_router
+
+MAX_REQUEST_BODY_BYTES = 2 * 1024 * 1024
+
+
+class RequestSizeLimitMiddleware:
+    """Reject HTTP requests whose body exceeds the configured size."""
+
+    def __init__(self, app, max_body_size: int = MAX_REQUEST_BODY_BYTES):
+        self.app = app
+        self.max_body_size = max_body_size
+
+    def _declared_body_is_too_large(self, scope) -> bool:
+        """Check whether Content-Length declares an oversized request."""
+        content_length = next(
+            (
+                value
+                for name, value in scope.get("headers", [])
+                if name.lower() == b"content-length"
+            ),
+            None,
+        )
+
+        if content_length is None:
+            return False
+
+        try:
+            declared_size = int(content_length)
+        except ValueError:
+            return False
+
+        return declared_size > self.max_body_size
+
+    async def _read_request_body(self, receive) -> tuple[bytes, bool, bool]:
+        """Read and buffer the body, enforcing the maximum size."""
+        body = bytearray()
+
+        while True:
+            message = await receive()
+
+            if message["type"] == "http.disconnect":
+                return b"", False, True
+
+            if message["type"] != "http.request":
+                continue
+
+            chunk = message.get("body", b"")
+
+            if len(body) + len(chunk) > self.max_body_size:
+                return b"", True, False
+
+            body.extend(chunk)
+
+            if not message.get("more_body", False):
+                return bytes(body), False, False
+
+    async def _send_too_large(self, scope, receive, send):
+        """Return a consistent HTTP 413 response."""
+        response = JSONResponse(
+            status_code=413,
+            content={
+                "error": {
+                    "code": "REQUEST_TOO_LARGE",
+                    "message": "Request body exceeds the 2 MiB size limit.",
+                }
+            },
+        )
+        await response(scope, receive, send)
+
+    async def __call__(self, scope, receive, send):
+        """Apply the body-size check to HTTP requests."""
+        if scope["type"] != "http":
+            await self.app(scope, receive, send)
+            return
+
+        if scope["method"] in {"GET", "HEAD", "OPTIONS"}:
+            await self.app(scope, receive, send)
+            return
+
+        if self._declared_body_is_too_large(scope):
+            await self._send_too_large(scope, receive, send)
+            return
+
+        body, too_large, disconnected = await self._read_request_body(receive)
+
+        if disconnected:
+            return
+
+        if too_large:
+            await self._send_too_large(scope, receive, send)
+            return
+
+        body_sent = False
+
+        async def replay_body():
+            nonlocal body_sent
+
+            if not body_sent:
+                body_sent = True
+                return {
+                    "type": "http.request",
+                    "body": body,
+                    "more_body": False,
+                }
+
+            return {"type": "http.disconnect"}
+
+        await self.app(scope, replay_body, send)
+
 
 request_id_context: ContextVar[str] = ContextVar(
     "request_id",
@@ -65,6 +180,51 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
+# In-memory rate limiting: suitable for a single application process.
+RATE_LIMIT_MAX_REQUESTS = 60
+RATE_LIMIT_WINDOW_SECONDS = 60
+
+_rate_limit_buckets: dict[str, tuple[float, int]] = {}
+_rate_limit_lock = Lock()
+
+
+def get_rate_limit_retry_after(client_ip: str) -> int | None:
+    """Return retry delay when the client has exceeded its request limit."""
+    now = monotonic()
+
+    with _rate_limit_lock:
+        window_start, request_count = _rate_limit_buckets.get(
+            client_ip,
+            (now, 0),
+        )
+
+        if now - window_start >= RATE_LIMIT_WINDOW_SECONDS:
+            window_start = now
+            request_count = 0
+
+        if request_count >= RATE_LIMIT_MAX_REQUESTS:
+            remaining = window_start + RATE_LIMIT_WINDOW_SECONDS - now
+            return max(1, ceil(remaining))
+
+        _rate_limit_buckets[client_ip] = (
+            window_start,
+            request_count + 1,
+        )
+
+        # Periodically remove expired client entries to limit memory growth.
+        if len(_rate_limit_buckets) > 10_000:
+            expired_clients = [
+                ip
+                for ip, (start, _) in _rate_limit_buckets.items()
+                if now - start >= RATE_LIMIT_WINDOW_SECONDS
+            ]
+
+            for ip in expired_clients:
+                _rate_limit_buckets.pop(ip, None)
+
+    return None
+
+
 settings = get_settings()
 if not settings.session_secret:
     if settings.environment == "production":
@@ -81,6 +241,11 @@ app = FastAPI(
 )
 
 app.add_middleware(
+    RequestSizeLimitMiddleware,
+    max_body_size=MAX_REQUEST_BODY_BYTES,
+)
+
+app.add_middleware(
     SessionMiddleware,
     secret_key=settings.session_secret,
     session_cookie="hr_policy_session",
@@ -88,6 +253,19 @@ app.add_middleware(
     same_site="lax",
     https_only=settings.environment == "production",
 )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.cors_origins,
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type", "X-API-Key"],
+    max_age=600,
+)
+
+app.include_router(auth_router)
+app.include_router(record_router)
+app.include_router(upload_router)
 
 
 def add_security_headers(response):
@@ -109,6 +287,9 @@ def add_security_headers(response):
     response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
     response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()"
 
+    if settings.environment == "production":
+        response.headers["Strict-Transport-Security"] = "max-age=31536000"
+
     return response
 
 
@@ -125,7 +306,50 @@ async def request_logging_middleware(request: Request, call_next):
             request.url.path,
         )
 
-        response = await call_next(request)
+        # The browser UI has no authenticated login flow yet.
+        # Keep it unavailable until proper browser authentication is implemented.
+        if settings.environment == "production" and request.url.path in {
+            "/ui",
+            "/ui/ask",
+        }:
+            response = JSONResponse(
+                status_code=404,
+                content={
+                    "error": {
+                        "code": "NOT_FOUND",
+                        "message": "Not found",
+                    }
+                },
+            )
+            response.headers["X-Request-ID"] = request_id
+            add_security_headers(response)
+
+            logger.info("Request completed with status %s", response.status_code)
+            return response
+
+        retry_after = None
+
+        if (
+            request.url.path not in {"/health", "/health/live", "/health/ready"}
+            and request.method != "OPTIONS"
+        ):
+            client_ip = request.client.host if request.client else "unknown"
+            retry_after = get_rate_limit_retry_after(client_ip)
+
+        if retry_after is not None:
+            response = JSONResponse(
+                status_code=429,
+                content={
+                    "error": {
+                        "code": "RATE_LIMIT_EXCEEDED",
+                        "message": "Too many requests. Try again later.",
+                    }
+                },
+                headers={"Retry-After": str(retry_after)},
+            )
+        else:
+            response = await call_next(request)
+
         response.headers["X-Request-ID"] = request_id
         add_security_headers(response)
 
@@ -171,11 +395,9 @@ app.mount(
 
 
 class AskRequest(BaseModel):
-    """Request body for the ask endpoint."""
+    model_config = ConfigDict(extra="forbid")
 
     question: str = Field(min_length=1)
-    tenant_id: str = Field(min_length=1)
-    user_roles: list[str] = Field(min_length=1)
     limit: int = Field(default=5, ge=1, le=20)
 
 
@@ -184,6 +406,35 @@ class AskResponse(BaseModel):
 
     answer: str
     citations: list[dict]
+
+
+def get_api_identity(
+    api_key: str | None = Header(default=None, alias="X-API-Key"),
+) -> tuple[str, list[str]]:
+    settings = get_settings()
+
+    employee_key = settings.employee_api_key
+    hr_key = settings.hr_api_key
+
+    # Fail closed if the API credentials are missing or identical.
+    if not employee_key or not hr_key or secrets.compare_digest(employee_key, hr_key):
+        raise HTTPException(
+            status_code=503,
+            detail="API authentication is not configured",
+        )
+
+    provided_key = api_key or ""
+
+    if secrets.compare_digest(provided_key, employee_key):
+        return "main", ["employee"]
+
+    if secrets.compare_digest(provided_key, hr_key):
+        return "main", ["HR administrator"]
+
+    raise HTTPException(
+        status_code=401,
+        detail="Invalid or missing API key",
+    )
 
 
 @app.get("/ui", response_class=HTMLResponse)
@@ -306,6 +557,7 @@ async def http_exception_handler(request, exc):
                 "message": str(exc.detail),
             }
         },
+        headers=exc.headers,
     )
 
 
@@ -328,6 +580,26 @@ async def general_exception_handler(request, exc):
     )
 
 
+@app.get("/health/live")
+def health_live():
+    """Check whether the application process is running."""
+    return {"status": "alive"}
+
+
+@app.get("/health/ready")
+def health_ready():
+    """Check whether the application can access its database."""
+    try:
+        check_connection()
+        return {"status": "ready", "database": "connected"}
+    except Exception:
+        logger.exception("Readiness check failed")
+        raise HTTPException(
+            status_code=503,
+            detail="Database is unavailable",
+        ) from None
+
+
 @app.get("/health")
 def health():
     """Check whether the application and database are available."""
@@ -343,13 +615,17 @@ def health():
 
 
 @app.post("/ask", response_model=AskResponse)
-def ask_policy_question(request: AskRequest):
-    """Answer an HR policy question using the existing RAG service."""
+def ask_policy_question(
+    request: AskRequest,
+    identity: tuple[str, list[str]] = Depends(get_api_identity),
+):
+    tenant_id, user_roles = identity
+
     try:
         result = ask(
             question=request.question,
-            tenant_id=request.tenant_id,
-            user_roles=request.user_roles,
+            tenant_id=tenant_id,
+            user_roles=user_roles,
             limit=request.limit,
         )
         return result

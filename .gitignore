@@ -24,3 +24,9 @@ __pycache__/
 __pycache__/
 *.py[cod]
 .pytest_cache/
+
+# Local Langflow API responses may contain credentials
+day15-tools/langflow/results/
+
+# Track the Day 18 environment template, never its real values
+!.env.day18.example

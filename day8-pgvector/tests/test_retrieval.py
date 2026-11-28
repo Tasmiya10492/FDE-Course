@@ -4,7 +4,7 @@ import pytest
 from src.retrieval import search_similar
 
 
-def test_retrieval_returns_relevant_chunks() -> None:
+def test_retrieval_returns_relevant_chunks(retrieval_test_data) -> None:
     """Verify that a valid tenant can retrieve policy chunks."""
     results = search_similar(
         question="What are the annual leave eligibility requirements?",
@@ -19,7 +19,7 @@ def test_retrieval_returns_relevant_chunks() -> None:
     assert all("id" in result for result in results)
 
 
-def test_retrieval_respects_result_limit() -> None:
+def test_retrieval_respects_result_limit(retrieval_test_data) -> None:
     """Verify that retrieval respects the requested result limit."""
     results = search_similar(
         question="What are the annual leave eligibility requirements?",
@@ -31,7 +31,7 @@ def test_retrieval_respects_result_limit() -> None:
     assert len(results) <= 2
 
 
-def test_other_tenant_cannot_access_unshared_documents() -> None:
+def test_other_tenant_cannot_access_unshared_documents(retrieval_test_data) -> None:
     """Verify that an unrelated tenant cannot retrieve tenant_a documents."""
     results = search_similar(
         question="What are the annual leave eligibility requirements?",
@@ -42,12 +42,12 @@ def test_other_tenant_cannot_access_unshared_documents() -> None:
     assert results == []
 
 
-def test_missing_required_role_denies_access() -> None:
-    """Verify that a user missing a required role gets no results."""
+def test_missing_required_role_denies_access(retrieval_test_data) -> None:
+    """Verify that a user without a matching role gets no results."""
     results = search_similar(
         question="What are the annual leave eligibility requirements?",
         tenant_id="tenant_a",
-        user_roles=["HR"],
+        user_roles=["Manager"],
     )
 
     assert results == []
@@ -75,7 +75,7 @@ def test_retrieval_rejects_empty_question() -> None:
         )
 
 
-def test_cross_tenant_sharing_requires_explicit_permission() -> None:
+def test_cross_tenant_sharing_requires_explicit_permission(retrieval_test_data) -> None:
     """Allow explicitly shared documents but enforce their required roles."""
     from src.database import get_connection
     from src.embeddings import generate_embedding

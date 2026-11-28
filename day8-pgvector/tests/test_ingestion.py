@@ -134,6 +134,109 @@ def test_ingestion_is_idempotent(
             )
 
 
+def test_ingestion_preserves_chunks_for_different_roles(
+    tmp_path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Verify that different role versions of a document coexist."""
+    from src.database import get_connection
+
+    tenant_id = "tenant_ingestion_roles_test"
+    source = "role_access_test_policy.txt"
+
+    policy_file = tmp_path / source
+    policy_file.write_text(
+        "Employees and HR have different access permissions.",
+        encoding="utf-8",
+    )
+
+    # Avoid calling Ollama during this database test.
+    monkeypatch.setattr(
+        "src.ingestion.generate_embedding",
+        lambda text: [0.0] * 768,
+    )
+
+    try:
+        with get_connection() as connection:
+            connection.execute(
+                """
+                DELETE FROM document_chunks
+                WHERE tenant_id = %s AND source = %s
+                """,
+                (tenant_id, source),
+            )
+
+        # First ingest the document for Employees.
+        employee_count = ingest_directory(
+            tmp_path,
+            tenant_id=tenant_id,
+            allowed_roles=["Employee"],
+        )
+
+        # Then ingest the same source for HR.
+        hr_count = ingest_directory(
+            tmp_path,
+            tenant_id=tenant_id,
+            allowed_roles=["HR"],
+        )
+
+        with get_connection() as connection:
+            rows = connection.execute(
+                """
+                SELECT allowed_roles, COUNT(*)
+                FROM document_chunks
+                WHERE tenant_id = %s AND source = %s
+                GROUP BY allowed_roles
+                """,
+                (tenant_id, source),
+            ).fetchall()
+
+        role_counts = {tuple(row[0]): row[1] for row in rows}
+
+        assert employee_count == 1
+        assert hr_count == 1
+        assert role_counts == {
+            ("Employee",): 1,
+            ("HR",): 1,
+        }
+
+        # Re-ingesting HR must replace only the HR version.
+        repeated_hr_count = ingest_directory(
+            tmp_path,
+            tenant_id=tenant_id,
+            allowed_roles=["HR"],
+        )
+
+        with get_connection() as connection:
+            final_rows = connection.execute(
+                """
+                SELECT allowed_roles, COUNT(*)
+                FROM document_chunks
+                WHERE tenant_id = %s AND source = %s
+                GROUP BY allowed_roles
+                """,
+                (tenant_id, source),
+            ).fetchall()
+
+        final_role_counts = {tuple(row[0]): row[1] for row in final_rows}
+
+        assert repeated_hr_count == 1
+        assert final_role_counts == {
+            ("Employee",): 1,
+            ("HR",): 1,
+        }
+
+    finally:
+        with get_connection() as connection:
+            connection.execute(
+                """
+                DELETE FROM document_chunks
+                WHERE tenant_id = %s AND source = %s
+                """,
+                (tenant_id, source),
+            )
+
+
 def test_paragraph_chunks_matches_day6_method():
     from src.ingestion import paragraph_chunks
 
