@@ -3,7 +3,7 @@
 # ------------------------------------------------------------
 # Stage 1: Install production dependencies
 # ------------------------------------------------------------
-FROM python:3.14.10-slim@sha256:22eafb370920ad8b429e0aec3fff433e0669968519f5d60469d83729c138b28b AS builder
+FROM python:3.14.10-slim@sha256:f57c4c23b985d95deea5bc5249e2f9c8a512b4cc9d5d3fd31900cbd2f5f0a604 AS builder
 
 COPY --from=ghcr.io/astral-sh/uv:0.13.8@sha256:5cc1805e2426484abca4ad46ea783bab281fdb225fd82d8ce6d66a81254bac85 /uv /bin/uv
 
@@ -23,7 +23,12 @@ RUN uv sync --project day8-pgvector --locked --no-dev --no-install-project
 # ------------------------------------------------------------
 # Stage 2: Minimal runtime
 # ------------------------------------------------------------
-FROM python:3.14.10-slim@sha256:22eafb370920ad8b429e0aec3fff433e0669968519f5d60469d83729c138b28b AS runtime
+FROM python:3.14.10-slim@sha256:f57c4c23b985d95deea5bc5249e2f9c8a512b4cc9d5d3fd31900cbd2f5f0a604 AS runtime
+
+# Apply available Debian security and package updates.
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && rm -rf /var/lib/apt/lists/*
 
 # Create a fixed non-root application identity.
 RUN useradd --create-home --uid 1000 --shell /usr/sbin/nologin appuser
